@@ -1,0 +1,107 @@
+//
+// All fonts were downloaded from https://fonts.google.com/
+// and converted to .woff2 format using https://transfonter.org/
+// The original layout in Figma uses the fonts ITC Avant Garde Gothic Std, Salesforce and HeptaSlab
+// In the project, the fonts ITC Avant Garde Gothic Std and Salesforce Sans were replaced with Montserrat and Roboto,
+// because they are commercial and require purchase
+//
+// ITC Avant Garde Gothic Std Book 300 - Montserrat Light 300
+// ITC Avant Garde Gothic Std Medium 500 - Montserrat Medium 500
+// ITC Avant Garde Gothic Std Demi 600 - Montserrat Semi-Bold 600
+// ITC Avant Garde Gothic Std Bold 700 - Montserrat Bold 700
+// Salesforce Sans Regular 400 - Roboto Regular 400
+// Salesforce Sans Bold 700 - Roboto Bold 700
+//
+
+
+//
+// Roboto
+//
+
+@font-face {
+    src: url('../fonts/Roboto-Regular.woff2') format('woff2');
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    src: url('../fonts/Roboto-Bold.woff2') format('woff2');
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+//
+// Montserrat
+//
+
+@font-face {
+    src: url('../fonts/Montserrat-Light.woff2') format('woff2');
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    src: url('../fonts/Montserrat-Medium.woff2') format('woff2');
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    src: url('../fonts/Montserrat-SemiBold.woff2') format('woff2');
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    src: url('../fonts/Montserrat-Bold.woff2') format('woff2');
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+//
+// HeptaSlab
+//
+
+@font-face {
+    src: url('../fonts/HeptaSlab-Light.woff2') format('woff2');
+    font-family: 'HeptaSlab', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    src: url('../fonts/HeptaSlab-Regular.woff2') format('woff2');
+    font-family: 'HeptaSlab', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    src: url('../fonts/HeptaSlab-SemiBold.woff2') format('woff2');
+    font-family: 'HeptaSlab', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    src: url('../fonts/HeptaSlab-Bold.woff2') format('woff2');
+    font-family: 'HeptaSlab', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}

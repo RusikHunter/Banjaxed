@@ -1,0 +1,77 @@
+@use 'sass:math';
+
+//
+// Mixin calculates adaptive font size in rem units
+//
+
+@mixin fluid-text($max: 48, $min: 16) {
+    $maxViewportWidth: var(--max-viewport-width);
+    $minViewportWidth: var(--min-viewport-width);
+
+    $maxSize: math.div($max, 16);
+    $minSize: math.div($min, 16);
+    $maxWidth: math.div($maxViewportWidth, 16);
+    $minWidth: math.div($minViewportWidth, 16);
+
+    $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+    $yAxisIntersection: -$minWidth * $slope + $minSize;
+
+    font-size: clamp(#{$minSize * 1rem},
+        #{$yAxisIntersection * 1rem} + #{$slope * 100vw},
+        #{$maxSize * 1rem});
+}
+
+@mixin font($fontFamily, $fontWeight, $lineHeight) {
+    font-family: $fontFamily;
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+}
+
+//
+// Hides the visibility of an element but does not remove it from the DOM tree
+// 
+
+@mixin visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}
+
+@mixin mobile-hidden {
+    @include mobile {
+        display: none !important;
+    }
+}
+
+@mixin mobile-visible {
+    @include mobile {
+        display: block !important;
+    }
+}
+
+//
+// For all elements that appear on top of the main content
+//
+
+@mixin overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 999 !important;
+}
+
+//
+// For links to social networks
+//
+
+@mixin square($size) {
+    width: $size;
+    aspect-ratio: 1;
+}

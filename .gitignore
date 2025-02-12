@@ -1,0 +1,40 @@
+# Log files
+*.log
+*.tmp
+*.bak
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Folders created by editors
+.vscode/
+.idea/
+
+# Node.js dependencies
+node_modules
+
+# Build and Development Folders
+/dist
+/build
+
+# Files related to the development environment
+.env
+.env.local
+.env.*.local
+
+# For npm (if used)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache and temporary files
+*.swp
+*.swo
+
+# Browser-specific files and folders
+# For example, if a service worker is used (e.g. in a PWA)
+.sw*
+
+# Generated files and folders
+*.map
