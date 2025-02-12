@@ -1,0 +1,20 @@
+{
+  "name": "banjaxed",
+  "version": "1.0.0",
+  "description": "Banjaxed - assistance in business development.",
+  "main": "index.js",
+  "scripts": {
+    "sass-watch": "sass --watch .",
+    "server": "live-server",
+    "dev": "concurrently \"server\" \"live-server\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "sass": "^1.84.0"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
