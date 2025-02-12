@@ -1,0 +1,51 @@
+:root {
+    // Default colors
+
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-purple: #6670EE;
+    --color-lightpurple: #7274A0;
+    --color-darkpurple: #33344B;
+
+    // Specific colors
+
+    --color-red: #F95993;
+    --color-yellow: #FFA901;
+    --color-green: #5EC697;
+
+    // Borders
+
+    --border-default: 1px solid var(--color-lightpurple);
+    // todo in development...
+
+    // Box-shadows
+
+    // todo in development...
+
+    // Fonts
+
+    --font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    --second-family: "Roboto", Arial, Helvetica, sans-serif;
+    --third-family: "HeptaSlab", Arial, Helvetica, sans-serif;
+
+    // Sizes and indents
+
+    --container-padding-inline: 210px;
+    --container-width-default: 1500px;
+
+    //
+    // the margins between sections are not set
+    // because in the layout these values ​​are unique for each section
+    //
+
+    --max-viewport-width: 1920px;
+    --min-viewport-width: 375px;
+
+    --button-padding-block: 21px;
+    --button-padding-block-small: 12px;
+    --input-padding-block: 24px;
+
+    // Transition
+
+    --trainsition: 0.3s ease;
+}

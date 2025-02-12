@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--container-width-default);
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: var(--container-padding-inline);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.visually-hidden {
+    @include visually-hidden;
+}
+
+.mobile-hidden {
+    @include mobile-hidden;
+}
+
+.mobile-visible {
+    @include mobile-visible;
+}
