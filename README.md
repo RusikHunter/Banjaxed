@@ -1,1 +1,3 @@
-# My Project
+# Banjaxed
+
+Banjaxed - assistance in business development.
