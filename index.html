@@ -10,11 +10,94 @@
     <meta name="description" content="Banjaxed - assistance in business development.">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <script src="scripts/main.js" type="module" defer></script>
+    <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">
     <title>Banjaxed</title>
 </head>
 
 <body>
-
+    <header class="header">
+        <div class="header__inner container">
+            <div class="header__row row">
+                <div class="header__column header__column--logo column">
+                    <a href="#" class="header__logo-link">
+                        <img src="images/icons/logo.svg" class="header__logo" alt="Banjaxed solutions" width="119"
+                            height="36">
+                    </a>
+                </div>
+                <div class="header__column header__column--nav column">
+                    <nav class="header__navigation">
+                        <ul class="header__navigation-list">
+                            <li class="header__navigation-list-item">
+                                <a href="#" class="header__navigation-link">Services</a>
+                            </li>
+                            <li class="header__navigation-list-item">
+                                <a href="#" class="header__navigation-link">Conversations</a>
+                            </li>
+                            <li class="header__navigation-list-item">
+                                <a href="#" class="header__navigation-link">Why Banjaxed?</a>
+                            </li>
+                            <li class="header__navigation-list-item">
+                                <a href="#" class="header__navigation-link">Partner with us</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header__column header__column--links column social-networks">
+                    <nav class="social-networks__navigation">
+                        <ul class="social-networks__navigation-list">
+                            <li class="social-networks__navigation-list-item">
+                                <a href="#" class="social-networks__navigation-link">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M10.9432 9.5752H13.9144V11.0552C14.3424 10.204 15.44 9.4392 17.0888 9.4392C20.2496 9.4392 21 11.1336 21 14.2424V20H17.8V14.9504C17.8 13.18 17.372 12.1816 16.2824 12.1816C14.7712 12.1816 14.1432 13.2576 14.1432 14.9496V20H10.9432V9.5752ZM5.456 19.864H8.656V9.4392H5.456V19.864ZM9.1144 6.04C9.11452 6.30822 9.06132 6.57379 8.95791 6.82127C8.85449 7.06875 8.70292 7.29321 8.512 7.4816C8.12512 7.8661 7.60145 8.08132 7.056 8.08C6.51151 8.07963 5.98905 7.86496 5.6016 7.4824C5.41137 7.29337 5.26031 7.06866 5.15707 6.82115C5.05384 6.57363 5.00046 6.30818 5 6.04C5 5.4984 5.216 4.98 5.6024 4.5976C5.98951 4.21453 6.51219 3.99976 7.0568 4C7.6024 4 8.1256 4.2152 8.512 4.5976C8.8976 4.98 9.1144 5.4984 9.1144 6.04Z"
+                                            fill="#595A7E" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-networks__navigation-list-item">
+                                <a href="#" class="social-networks__navigation-link">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M14.3333 9.33333V7.73333C14.3333 7.04 14.4933 6.66667 15.6133 6.66667H17V4H14.8667C12.2 4 11.1333 5.76 11.1333 7.73333V9.33333H9V12H11.1333V20H14.3333V12H16.68L17 9.33333H14.3333Z"
+                                            fill="#595A7E" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-networks__navigation-list-item">
+                                <a href="#" class="social-networks__navigation-link">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M20.6231 7.8828C20.5212 7.51945 20.3227 7.19049 20.0487 6.93089C19.7669 6.66331 19.4216 6.4719 19.0453 6.37474C17.637 6.00372 11.9948 6.00372 11.9948 6.00372C9.64257 5.97697 7.29096 6.09462 4.9532 6.356C4.57689 6.46034 4.23222 6.65603 3.94984 6.92564C3.67237 7.19248 3.4714 7.52152 3.36641 7.88205C3.11422 9.24002 2.99168 10.6189 3.00046 12C2.99146 13.3799 3.1137 14.7583 3.36641 16.1179C3.46915 16.477 3.66937 16.8045 3.94759 17.0691C4.2258 17.3337 4.57225 17.5248 4.9532 17.626C6.38026 17.9963 11.9948 17.9963 11.9948 17.9963C14.3499 18.0231 16.7045 17.9054 19.0453 17.644C19.4216 17.5468 19.7669 17.3554 20.0487 17.0878C20.3226 16.8283 20.5209 16.4993 20.6223 16.1359C20.8811 14.7785 21.007 13.3991 20.998 12.0172C21.0175 10.6295 20.8918 9.24363 20.6231 7.88205V7.8828ZM10.201 14.5664V9.43434L14.8954 12.0007L10.201 14.5664Z"
+                                            fill="#595A7E" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-networks__navigation-list-item">
+                                <a href="#" class="social-networks__navigation-link">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.9978 9.3322C11.5289 9.3322 10.3301 10.531 10.3301 12C10.3301 13.469 11.5289 14.6678 12.9978 14.6678C14.4668 14.6678 15.6656 13.469 15.6656 12C15.6656 10.531 14.4668 9.3322 12.9978 9.3322ZM20.9991 12C20.9991 10.8953 21.0091 9.80051 20.9471 8.69777C20.885 7.4169 20.5928 6.28014 19.6562 5.3435C18.7176 4.40487 17.5829 4.11467 16.302 4.05263C15.1973 3.99059 14.1026 4.0006 12.9999 4.0006C11.8951 4.0006 10.8004 3.99059 9.69768 4.05263C8.41684 4.11467 7.28009 4.40687 6.34348 5.3435C5.40486 6.28214 5.11467 7.4169 5.05263 8.69777C4.99059 9.80252 5.0006 10.8973 5.0006 12C5.0006 13.1027 4.99059 14.1995 5.05263 15.3022C5.11467 16.5831 5.40686 17.7199 6.34348 18.6565C7.28209 19.5951 8.41684 19.8853 9.69768 19.9474C10.8024 20.0094 11.8971 19.9994 12.9999 19.9994C14.1046 19.9994 15.1993 20.0094 16.302 19.9474C17.5829 19.8853 18.7196 19.5931 19.6562 18.6565C20.5948 17.7179 20.885 16.5831 20.9471 15.3022C21.0111 14.1995 20.9991 13.1047 20.9991 12ZM12.9978 16.1048C10.7264 16.1048 8.89315 14.2715 8.89315 12C8.89315 9.72847 10.7264 7.89523 12.9978 7.89523C15.2693 7.89523 17.1025 9.72847 17.1025 12C17.1025 14.2715 15.2693 16.1048 12.9978 16.1048ZM17.2707 8.68576C16.7403 8.68576 16.312 8.25747 16.312 7.72711C16.312 7.19675 16.7403 6.76847 17.2707 6.76847C17.801 6.76847 18.2293 7.19675 18.2293 7.72711C18.2294 7.85305 18.2048 7.97778 18.1566 8.09416C18.1085 8.21054 18.0379 8.31628 17.9489 8.40533C17.8598 8.49438 17.7541 8.56499 17.6377 8.61311C17.5213 8.66123 17.3966 8.68592 17.2707 8.68576Z"
+                                            fill="#595A7E" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-networks__navigation-list-item">
+                                <button class="social-networks__button-link-wrap">
+                                    <a href="#" class="social-networks__navigation-link">
+                                        Сontact us
+                                    </a>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
 </body>
 
 </html>
