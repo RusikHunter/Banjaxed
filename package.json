@@ -4,9 +4,7 @@
   "description": "Banjaxed - assistance in business development.",
   "main": "index.js",
   "scripts": {
-    "sass-watch": "sass --watch .",
-    "server": "live-server",
-    "dev": "concurrently \"server\" \"live-server\""
+    "dev": "concurrently \"live-server\" \"sass --watch .\""
   },
   "author": "",
   "license": "ISC",
