@@ -1,0 +1,73 @@
+@use '../index' as *;
+
+.header {
+
+    &__inner {}
+
+    &__row {
+        padding-block: 22px;
+        align-items: center;
+    }
+
+    &__column {}
+
+    &__column--logo {}
+
+    &__logo-link {}
+
+    &__logo {}
+
+    &__column--nav {
+        flex-grow: 1;
+    }
+
+    &__navigation {}
+
+    &__navigation-list {
+        display: flex;
+        column-gap: 48px;
+        justify-content: end;
+        padding-right: 120px;
+    }
+
+    &__navigation-list-item {}
+
+    &__navigation-link {
+        @include fluid-text(16, 16);
+        @include font(var(--font-family), 400, 1.7);
+        color: var(---color-purple-200);
+        position: relative;
+
+        &::after {
+            opacity: 0;
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: -30px;
+            width: 100%;
+            height: 5px;
+            background: url('../../images/icons/wave-link-bottom.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 5px;
+            transition: opacity var(--trainsition), left var(--trainsition);
+            pointer-events: none;
+        }
+
+        &:hover {
+            &::after {
+                animation: slide-in var(--trainsition) forwards;
+            }
+        }
+
+        &:not(:hover) {
+            &::after {
+                animation: slide-out var(--trainsition) forwards;
+            }
+        }
+
+        // todo media --> after
+    }
+
+    &__column--links {}
+}

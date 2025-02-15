@@ -1,11 +1,37 @@
 :root {
-    // Default colors
+    // Default colors ("use instead of" means that the shades are as similar as possible to each other)
 
-    --color-white: #FFFFFF;
-    --color-black: #000000;
-    --color-purple: #6670EE;
-    --color-lightpurple: #7274A0;
-    --color-darkpurple: #33344B;
+    --color-white: #FFFFFF; // Use instead of --#f3f4f9-- --#e8e8f3-- --#dcdded-- --f0f1fd-- from layout
+    --color-black: #000000; // Use instead of --#0d0d18-- --#040728-- from layout
+
+    // Layout purple shades
+
+    --color-purple-100: #0e123c;
+    --color-purple-200: #181c50;
+    --color-purple-250: #212763;
+    --color-purple-300: #2b3177;
+    --color-purple-350: #3f469f;
+    --color-purple-400: #525bc6;
+    --color-purple-500: #6670ee;
+    --color-purple-600: #858df1;
+    --color-purple-700: #a3a9f5;
+    --color-purple-750: #c2c6f8;
+    --color-purple-800: #d1d4fa;
+    --color-purple-900: #e0e2fc;
+
+    // Layout purple-gray shades
+
+    --color-purple-gray-100: #1a1a29;
+    --color-purple-gray-200: #26273a;
+    --color-purple-gray-300: #33344b;
+    --color-purple-gray-400: #3f415c;
+    --color-purple-gray-500: #595a7e;
+    --color-purple-gray-550: #7274a0;
+    --color-purple-gray-600: #8b8ec2;
+    --color-purple-gray-650: #a2a5ce;
+    --color-purple-gray-700: #b9bbda;
+    --color-purple-gray-800: #d1d2e7;
+    --color-purple-gray-900: #dcdded;
 
     // Specific colors
 
@@ -15,7 +41,7 @@
 
     // Borders
 
-    --border-default: 1px solid var(--color-lightpurple);
+    --border-default: 1px solid var(--color-purple-gray-650);
     // todo in development...
 
     // Box-shadows
@@ -47,5 +73,5 @@
 
     // Transition
 
-    --trainsition: 0.3s ease;
+    --trainsition: 0.4s ease;
 }

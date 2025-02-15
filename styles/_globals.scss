@@ -2,6 +2,24 @@
 // Styles for tag selectors
 //
 
-//
-// in progress...
-//
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
