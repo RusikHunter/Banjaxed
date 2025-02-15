@@ -26,3 +26,9 @@ $mobile-small: 480px;
         @content;
     }
 }
+
+@mixin touch-screen {
+    @media (hover: none) {
+        @content;
+    }
+}

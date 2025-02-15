@@ -424,7 +424,7 @@ svg * {
   padding-block: 22px;
   align-items: center;
 }
-.header__column--nav {
+.header__column--navigation {
   flex-grow: 1;
 }
 .header__navigation-list {
@@ -462,6 +462,14 @@ svg * {
 .header__navigation-link:not(:hover)::after {
   animation: slide-out var(--trainsition) forwards;
 }
+.header__navigation-link:focus-visible::after {
+  animation: slide-in var(--trainsition) forwards;
+}
+@media (hover: none) {
+  .header__navigation-link::after {
+    display: none;
+  }
+}
 .social-networks__navigation-list {
   display: flex;
   column-gap: 8px;
@@ -469,8 +477,8 @@ svg * {
 .social-networks__navigation-link {
   border-radius: 12px;
   padding: 12px;
-  border: var(--border-default);
   color: var(--color-purple-gray-500);
+  border: var(--border-default);
   box-shadow: none;
   transition: color var(--trainsition), border-color var(--trainsition), box-shadow var(--trainsition);
 }
@@ -478,28 +486,24 @@ svg * {
   position: relative;
   left: -1px;
 }
-.social-networks__navigation-link:hover {
+.social-networks__navigation-link:hover, .social-networks__navigation-link:focus-visible {
   border-color: var(--color-purple-500);
   color: var(--color-purple-400);
   box-shadow: 0 12px 19px 0 rgba(93, 110, 171, 0.12);
 }
-.social-networks__button-link-wrap {
-  padding-left: 4px;
+@media (hover: none) {
+  .social-networks__navigation-link:hover {
+    color: var(--color-purple-gray-500);
+    border: var(--border-default);
+    box-shadow: none;
+  }
 }
-.social-networks__button-link-wrap a.social-networks__navigation-link {
+.social-networks__navigation-link--long {
   font-size: clamp(1rem, 1rem + 0vw, 1rem);
   font-family: var(--font-family);
   font-weight: 700;
   line-height: 1.5;
   padding-inline: 25px;
-  border: var(--border-default);
-  box-shadow: none;
-  transition: color var(--trainsition), border-color var(--trainsition), box-shadow var(--trainsition);
-}
-.social-networks__button-link-wrap a.social-networks__navigation-link:hover {
-  border-color: var(--color-purple-500);
-  color: var(--color-purple-400);
-  box-shadow: 0 12px 19px 0 rgba(93, 110, 171, 0.12);
 }
 
 /*# sourceMappingURL=styles.css.map */

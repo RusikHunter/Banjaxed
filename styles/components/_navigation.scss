@@ -14,8 +14,8 @@
     &__navigation-link {
         border-radius: 12px;
         padding: 12px;
-        border: var(--border-default);
         color: var(--color-purple-gray-500);
+        border: var(--border-default);
         box-shadow: none;
         transition: color var(--trainsition), border-color var(--trainsition), box-shadow var(--trainsition);
 
@@ -25,29 +25,25 @@
             left: -1px;
         }
 
-        &:hover {
+        &:hover,
+        &:focus-visible {
             border-color: var(--color-purple-500);
             color: var(--color-purple-400);
             box-shadow: 0 12px 19px 0 rgba(93, 110, 171, 0.12);
         }
-    }
 
-    &__button-link-wrap {
-        padding-left: 4px;
-
-        & a.social-networks__navigation-link {
-            @include fluid-text(16, 16);
-            @include font(var(--font-family), 700, 1.5);
-            padding-inline: 25px;
-            border: var(--border-default);
-            box-shadow: none;
-            transition: color var(--trainsition), border-color var(--trainsition), box-shadow var(--trainsition);
-
+        @media (hover: none) {
             &:hover {
-                border-color: var(--color-purple-500);
-                color: var(--color-purple-400);
-                box-shadow: 0 12px 19px 0 rgba(93, 110, 171, 0.12);
+                color: var(--color-purple-gray-500);
+                border: var(--border-default);
+                box-shadow: none;
             }
         }
+    }
+
+    &__navigation-link--long {
+        @include fluid-text(16, 16);
+        @include font(var(--font-family), 700, 1.5);
+        padding-inline: 25px;
     }
 }
