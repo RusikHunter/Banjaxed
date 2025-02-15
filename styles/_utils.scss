@@ -1,4 +1,5 @@
 @use "mixins" as *;
+@use "media" as *;
 
 .container {
     display: flex;
@@ -6,6 +7,11 @@
     max-width: var(--container-width-default);
     width: 100%;
     margin-inline: auto;
+    padding-inline: var(--container-padding-inline);
+
+    @include laptop {}
+
+    @include tablet {}
 }
 
 .row {

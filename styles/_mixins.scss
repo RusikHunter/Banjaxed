@@ -48,7 +48,7 @@
 }
 
 @mixin mobile-hidden {
-    display: flex;
+    display: flex !important;
 
     @include mobile {
         display: none !important;
@@ -56,7 +56,7 @@
 }
 
 @mixin mobile-visible {
-    display: none;
+    display: none !important;
 
     @include mobile {
         display: flex !important;

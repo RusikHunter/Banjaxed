@@ -5,6 +5,7 @@
     &__inner {}
 
     &__row {
+        position: relative;
         padding-block: 22px;
         align-items: center;
     }
@@ -15,7 +16,21 @@
 
     &__logo-link {}
 
-    &__logo {}
+    &__logo {
+        height: auto;
+
+        @include laptop {
+            width: 100px;
+        }
+
+        @include tablet {
+            width: 72px;
+        }
+
+        @include mobile {
+            width: 102px;
+        }
+    }
 
     &__column--navigation {
         flex-grow: 1;
@@ -28,12 +43,22 @@
         column-gap: 48px;
         justify-content: end;
         padding-right: 120px;
+
+        @include laptop {
+            justify-content: center;
+            padding-right: 0;
+            column-gap: 24px;
+        }
+
+        @include tablet {
+            column-gap: 12px;
+        }
     }
 
     &__navigation-list-item {}
 
     &__navigation-link {
-        @include fluid-text(16, 16);
+        @include fluid-text(16, 8);
         @include font(var(--font-family), 400, 1.7);
         color: var(---color-purple-200);
         position: relative;
@@ -72,11 +97,18 @@
             }
         }
 
-        @include touch-screen {
-            &::after {
-                display: none;
-            }
-        }
+        // @include laptop {
+        //     // aspect-ratio: ;
+        //     @include fluid-text(12, 12);
+        // }
+
+        // ! todo touch screen hover effect -->
+
+        // @include touch-screen {
+        //     &::after {
+        //         display: none;
+        //     }
+        // }
     }
 
     &__column--links {}

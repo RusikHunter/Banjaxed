@@ -26,24 +26,43 @@
         }
 
         &:hover,
+        &:active,
         &:focus-visible {
             border-color: var(--color-purple-500);
             color: var(--color-purple-400);
             box-shadow: 0 12px 19px 0 rgba(93, 110, 171, 0.12);
         }
 
-        @media (hover: none) {
-            &:hover {
-                color: var(--color-purple-gray-500);
-                border: var(--border-default);
-                box-shadow: none;
-            }
+        // todo -->
+
+        // &:focus {
+        //     color: var(--color-purple-gray-500);
+        // }
+
+        @include tablet {
+            padding: 6px;
         }
+
+        // ! todo touch screen hover effect -->
+
+        // @media (hover: none) {
+        //     &:hover {
+        //         color: var(--color-purple-gray-500);
+        //         border: var(--border-default);
+        //         box-shadow: none;
+        //     }
+        // }
     }
 
     &__navigation-link--long {
         @include fluid-text(16, 16);
         @include font(var(--font-family), 700, 1.5);
         padding-inline: 25px;
+        margin-left: 4px;
+
+        @include tablet {
+            @include fluid-text(12, 12);
+            padding-block: 9px;
+        }
     }
 }
