@@ -27,6 +27,12 @@ $mobile-small: 480px;
     }
 }
 
+@mixin desktop-screen {
+    @media (hover: hover) {
+        @content;
+    }
+}
+
 @mixin touch-screen {
     @media (hover: none) {
         @content;

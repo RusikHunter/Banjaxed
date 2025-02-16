@@ -81,34 +81,40 @@
 
         &:hover {
             &::after {
-                animation: slide-in var(--trainsition) forwards;
+                animation: navigation-slide-in var(--trainsition) forwards;
             }
         }
 
         &:not(:hover) {
             &::after {
-                animation: slide-out var(--trainsition) forwards;
+                animation: navigation-slide-out var(--trainsition) forwards;
             }
         }
 
         &:focus-visible {
             &::after {
-                animation: slide-in var(--trainsition) forwards;
+                animation: navigation-slide-in var(--trainsition) forwards;
             }
         }
 
-        // @include laptop {
-        //     // aspect-ratio: ;
-        //     @include fluid-text(12, 12);
-        // }
+        @include touch-screen {
 
-        // ! todo touch screen hover effect -->
+            &:hover,
+            &:not(:hover) {
+                &::after {
+                    display: none;
+                }
+            }
 
-        // @include touch-screen {
-        //     &::after {
-        //         display: none;
-        //     }
-        // }
+            &:active {
+                &::after {
+                    animation: navigation-show var(--trainsition) forwards;
+                    left: 0;
+                    opacity: 1;
+                    display: block;
+                }
+            }
+        }
     }
 
     &__column--links {}
