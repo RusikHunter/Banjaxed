@@ -428,6 +428,9 @@ svg * {
     opacity: 1;
   }
 }
+.header {
+  background: green;
+}
 .header__row {
   position: relative;
   padding-block: 22px;
