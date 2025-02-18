@@ -1,7 +1,7 @@
 @use '../index' as *;
 
 .header {
-    background: green;
+    border-block: var(--border-default);
 
     &__inner {}
 
