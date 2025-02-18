@@ -38,4 +38,8 @@
         padding-block: 22px;
         border-top: var(--border-default);
     }
+
+    @include mobile-upper {
+        display: none !important;
+    }
 }

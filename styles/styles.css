@@ -664,5 +664,10 @@ svg * {
   padding-block: 22px;
   border-top: var(--border-default);
 }
+@media (min-width: 769px) {
+  .burger-menu {
+    display: none !important;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
