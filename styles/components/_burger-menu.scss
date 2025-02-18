@@ -16,22 +16,14 @@
         }
     }
 
-    &__row {}
-
     &__row--navigation {
         padding-block: 40px;
     }
 
-    &__navigation {}
-
-    &__navigation-list {}
-
-    &__navigation-list-item {}
-
     &__navigation-link {
         @include fluid-text(14, 14);
         @include font(var(--font-family), 400, 2.3);
-        color: var(---color-purple-200);
+        color: var(--color-purple-200);
     }
 
     &__row--social-networks {

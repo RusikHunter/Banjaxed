@@ -2,8 +2,6 @@
 
 .social-networks {
 
-    &__navigation {}
-
     &__navigation--burger {
         width: 100%;
     }
@@ -13,7 +11,7 @@
         column-gap: 8px;
     }
 
-    &__navigation-list-item {}
+    //pressing the "contact us" button in the burger menu to the right edge
 
     &__navigation-list-item--pressed-right {
         margin-left: auto;
@@ -25,7 +23,7 @@
         color: var(--color-purple-gray-500);
         border: var(--border-default);
         box-shadow: none;
-        transition: color var(--trainsition), border-color var(--trainsition), box-shadow var(--trainsition);
+        transition: color var(--transition), border-color var(--transition), box-shadow var(--transition);
 
         & svg {
             // Fixing curved svg icons in the layout

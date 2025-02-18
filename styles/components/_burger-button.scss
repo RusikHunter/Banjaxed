@@ -17,12 +17,12 @@
         position: relative;
 
         &:first-child {
-            transition: transform var(--trainsition), top var(--trainsition);
+            transition: transform var(--transition), top var(--transition);
             width: 14px;
         }
 
         &:last-child {
-            transition: transform var(--trainsition), top var(--trainsition), width var(--trainsition);
+            transition: transform var(--transition), top var(--transition), width var(--transition);
             width: 10px;
         }
     }

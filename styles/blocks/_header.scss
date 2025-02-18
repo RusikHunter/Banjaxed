@@ -3,19 +3,11 @@
 .header {
     border-block: var(--border-default);
 
-    &__inner {}
-
     &__row {
         position: relative;
         padding-block: 22px;
         align-items: center;
     }
-
-    &__column {}
-
-    &__column--logo {}
-
-    &__logo-link {}
 
     &__logo {
         height: auto;
@@ -37,8 +29,6 @@
         flex-grow: 1;
     }
 
-    &__navigation {}
-
     &__navigation-list {
         display: flex;
         column-gap: 48px;
@@ -56,12 +46,10 @@
         }
     }
 
-    &__navigation-list-item {}
-
     &__navigation-link {
         @include fluid-text(16, 8);
         @include font(var(--font-family), 400, 1.7);
-        color: var(---color-purple-200);
+        color: var(--color-purple-200);
         position: relative;
 
         &::after {
@@ -76,25 +64,32 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: 100% 5px;
-            transition: opacity var(--trainsition), left var(--trainsition);
+            transition: opacity var(--transition), left var(--transition);
             pointer-events: none;
         }
 
+        // for some reason :hover and :focus-visible can't work in a combined selector,
+        // so we need to keep them separate
+
         &:hover {
+            color: var(--color-purple-200);
+
             &::after {
-                animation: navigation-slide-in var(--trainsition) forwards;
+                animation: navigation-slide-in var(--transition) forwards;
             }
         }
 
         &:not(:hover) {
             &::after {
-                animation: navigation-slide-out var(--trainsition) forwards;
+                animation: navigation-slide-out var(--transition) forwards;
             }
         }
 
         &:focus-visible {
+            color: var(--color-purple-200);
+
             &::after {
-                animation: navigation-slide-in var(--trainsition) forwards;
+                animation: navigation-slide-in var(--transition) forwards;
             }
         }
 
@@ -109,7 +104,7 @@
 
             &:active {
                 &::after {
-                    animation: navigation-show var(--trainsition) forwards;
+                    animation: navigation-show var(--transition) forwards;
                     left: 0;
                     opacity: 1;
                     display: block;
@@ -117,6 +112,4 @@
             }
         }
     }
-
-    &__column--links {}
 }

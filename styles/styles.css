@@ -405,7 +405,7 @@ svg * {
   --button-padding-block: 21px;
   --button-padding-block-small: 12px;
   --input-padding-block: 24px;
-  --trainsition: 0.4s ease;
+  --transition: 0.4s ease;
 }
 
 @keyframes navigation-slide-in {
@@ -488,7 +488,7 @@ svg * {
   font-family: var(--font-family);
   font-weight: 400;
   line-height: 1.7;
-  color: var(---color-purple-200);
+  color: var(--color-purple-200);
   position: relative;
 }
 .header__navigation-link::after {
@@ -503,29 +503,36 @@ svg * {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 5px;
-  transition: opacity var(--trainsition), left var(--trainsition);
+  transition: opacity var(--transition), left var(--transition);
   pointer-events: none;
 }
+.header__navigation-link:hover {
+  color: var(--color-purple-200);
+}
 .header__navigation-link:hover::after {
-  animation: navigation-slide-in var(--trainsition) forwards;
+  animation: navigation-slide-in var(--transition) forwards;
 }
 .header__navigation-link:not(:hover)::after {
-  animation: navigation-slide-out var(--trainsition) forwards;
+  animation: navigation-slide-out var(--transition) forwards;
+}
+.header__navigation-link:focus-visible {
+  color: var(--color-purple-200);
 }
 .header__navigation-link:focus-visible::after {
-  animation: navigation-slide-in var(--trainsition) forwards;
+  animation: navigation-slide-in var(--transition) forwards;
 }
 @media (hover: none) {
   .header__navigation-link:hover::after, .header__navigation-link:not(:hover)::after {
     display: none;
   }
   .header__navigation-link:active::after {
-    animation: navigation-show var(--trainsition) forwards;
+    animation: navigation-show var(--transition) forwards;
     left: 0;
     opacity: 1;
     display: block;
   }
 }
+
 .social-networks__navigation--burger {
   width: 100%;
 }
@@ -542,7 +549,7 @@ svg * {
   color: var(--color-purple-gray-500);
   border: var(--border-default);
   box-shadow: none;
-  transition: color var(--trainsition), border-color var(--trainsition), box-shadow var(--trainsition);
+  transition: color var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 .social-networks__navigation-link svg {
   position: relative;
@@ -612,11 +619,11 @@ svg * {
   position: relative;
 }
 .burger-button__line:first-child {
-  transition: transform var(--trainsition), top var(--trainsition);
+  transition: transform var(--transition), top var(--transition);
   width: 14px;
 }
 .burger-button__line:last-child {
-  transition: transform var(--trainsition), top var(--trainsition), width var(--trainsition);
+  transition: transform var(--transition), top var(--transition), width var(--transition);
   width: 10px;
 }
 
@@ -658,7 +665,7 @@ svg * {
   font-family: var(--font-family);
   font-weight: 400;
   line-height: 2.3;
-  color: var(---color-purple-200);
+  color: var(--color-purple-200);
 }
 .burger-menu__row--social-networks {
   padding-block: 22px;
