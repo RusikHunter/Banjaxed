@@ -5,3 +5,11 @@
 @use "normalize";
 @use "utils";
 @use "variables";
+@use "keyframes";
+@use 'index' as *;
+
+@use 'blocks/header';
+
+@use 'components/navigation';
+@use 'components/burger-button';
+@use 'components/burger-menu';

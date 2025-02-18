@@ -1,3 +1,6 @@
+@use "mixins" as *;
+@use "media" as *;
+
 .container {
     display: flex;
     flex-direction: column;
@@ -5,6 +8,10 @@
     width: 100%;
     margin-inline: auto;
     padding-inline: var(--container-padding-inline);
+
+    @include laptop {}
+
+    @include tablet {}
 }
 
 .row {
@@ -29,4 +36,8 @@
 
 .mobile-visible {
     @include mobile-visible;
+}
+
+.overlay {
+    @include overlay;
 }

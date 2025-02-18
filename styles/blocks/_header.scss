@@ -1,0 +1,115 @@
+@use '../index' as *;
+
+.header {
+    border-block: var(--border-default);
+
+    &__row {
+        position: relative;
+        padding-block: 22px;
+        align-items: center;
+    }
+
+    &__logo {
+        height: auto;
+
+        @include laptop {
+            width: 100px;
+        }
+
+        @include tablet {
+            width: 72px;
+        }
+
+        @include mobile {
+            width: 102px;
+        }
+    }
+
+    &__column--navigation {
+        flex-grow: 1;
+    }
+
+    &__navigation-list {
+        display: flex;
+        column-gap: 48px;
+        justify-content: end;
+        padding-right: 120px;
+
+        @include laptop {
+            justify-content: center;
+            padding-right: 0;
+            column-gap: 24px;
+        }
+
+        @include tablet {
+            column-gap: 12px;
+        }
+    }
+
+    &__navigation-link {
+        @include fluid-text(16, 8);
+        @include font(var(--font-family), 400, 1.7);
+        color: var(--color-purple-200);
+        position: relative;
+
+        &::after {
+            opacity: 0;
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: -30px;
+            width: 100%;
+            height: 5px;
+            background: url('../../images/icons/wave-link-bottom.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 5px;
+            transition: opacity var(--transition), left var(--transition);
+            pointer-events: none;
+        }
+
+        // for some reason :hover and :focus-visible can't work in a combined selector,
+        // so we need to keep them separate
+
+        &:hover {
+            color: var(--color-purple-200);
+
+            &::after {
+                animation: navigation-slide-in var(--transition) forwards;
+            }
+        }
+
+        &:not(:hover) {
+            &::after {
+                animation: navigation-slide-out var(--transition) forwards;
+            }
+        }
+
+        &:focus-visible {
+            color: var(--color-purple-200);
+
+            &::after {
+                animation: navigation-slide-in var(--transition) forwards;
+            }
+        }
+
+        @include touch-screen {
+
+            &:hover,
+            &:not(:hover) {
+                &::after {
+                    display: none;
+                }
+            }
+
+            &:active {
+                &::after {
+                    animation: navigation-show var(--transition) forwards;
+                    left: 0;
+                    opacity: 1;
+                    display: block;
+                }
+            }
+        }
+    }
+}

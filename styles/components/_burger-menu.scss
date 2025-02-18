@@ -1,0 +1,37 @@
+@use "../index" as *;
+
+.burger-menu {
+    width: 100%;
+    border: 0;
+    padding: 0;
+    height: auto;
+
+    &__wrapper {
+        padding-left: 40px;
+        width: 310px;
+
+        @include mobile-small {
+            padding-left: 0;
+            margin-inline: auto;
+        }
+    }
+
+    &__row--navigation {
+        padding-block: 40px;
+    }
+
+    &__navigation-link {
+        @include fluid-text(14, 14);
+        @include font(var(--font-family), 400, 2.3);
+        color: var(--color-purple-200);
+    }
+
+    &__row--social-networks {
+        padding-block: 22px;
+        border-top: var(--border-default);
+    }
+
+    @include mobile-upper {
+        display: none !important;
+    }
+}

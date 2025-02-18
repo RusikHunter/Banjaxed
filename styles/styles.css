@@ -1,3 +1,680 @@
+@font-face {
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2");
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  src: url("../fonts/Roboto-Bold.woff2") format("woff2");
+  font-family: "Roboto";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  src: url("../fonts/HeptaSlab-Light.woff2") format("woff2");
+  font-family: "HeptaSlab";
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  src: url("../fonts/HeptaSlab-Regular.woff2") format("woff2");
+  font-family: "HeptaSlab";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  src: url("../fonts/HeptaSlab-SemiBold.woff2") format("woff2");
+  font-family: "HeptaSlab";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  src: url("../fonts/HeptaSlab-Bold.woff2") format("woff2");
+  font-family: "HeptaSlab";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
+a:hover,
+a:focus,
+a:active {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+body {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/**
+  Normalization of the block model
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+   Remove internal left margins for lis
+   tags that have a class attribute
+  */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+   Remove internal left margins for list
+   tags that have a class attribute
+  */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+   We remove the outer vertical indents
+   for the necessary tags, which have
+   the class attribute
+  */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+   Remove the standard marker for
+   a bulleted list that has
+   a class attribute
+  */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+   Zero out the vertical margins of the paragraph,
+   declare a local variable for the margin down,
+   to avoid interaction with a more complex selector
+  */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+   The outer margin down for a paragraph without
+   a class attribute that is not the last
+   among its neighbors
+  */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+   Simplifying work with images and videos
+  */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+   Inherit font properties for input fields
+  */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+   It will be useful in most situations
+   (for example, when you need to "press"
+   the footer to the bottom of the site)
+  */
+  height: 100%;
+  /**
+   Remove horizontal interface jump when
+   scrollbar appears/disappears
+  */
+  scrollbar-gutter: stable;
+}
+
+/**
+   Smooth scrolling
+  */
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+   It will be useful in most situations
+   (for example, when you need to "press"
+   the footer to the bottom of the site)
+  */
+  min-height: 100%;
+  /**
+   Unified leading
+  */
+  line-height: 1.5;
+}
+
+/**
+   Normalize the height of a link element
+   when inspecting it in DevTools
+  */
+a:where([class]) {
+  display: inline-flex;
+}
+
+/**
+   Hand cursor when hovering over an element
+  */
+button,
+label {
+  cursor: pointer;
+}
+
+/**
+   We bring svg elements to a single color
+   (except for those that already have
+   a fill attribute with a value of 'none'
+   or start with 'url')
+  */
+:where([fill]:not([fill=none],
+[fill^=url])) {
+  fill: currentColor;
+}
+
+/**
+   We bring svg elements to a single color
+   (except for those that already have
+   the stroke attribute specified with
+   the value 'none')
+  */
+:where([stroke]:not([stroke=none],
+[stroke^=url])) {
+  stroke: currentColor;
+}
+
+/**
+   Fixing a bug with delayed color
+   change when interacting with svg elements
+  */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+   Bringing table frames to the classic 'collapse' look
+  */
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+/**
+   Remove all animations and transitions
+   for people who prefer not to use them
+  */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--container-width-default);
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--container-padding-inline);
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+.mobile-hidden {
+  display: flex !important;
+}
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+}
+
+.mobile-visible {
+  display: none !important;
+}
+@media (max-width: 768px) {
+  .mobile-visible {
+    display: flex !important;
+  }
+}
+
+.overlay {
+  position: absolute !important;
+  z-index: 999 !important;
+}
+
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-purple-100: #0e123c;
+  --color-purple-200: #181c50;
+  --color-purple-250: #212763;
+  --color-purple-300: #2b3177;
+  --color-purple-350: #3f469f;
+  --color-purple-400: #525bc6;
+  --color-purple-500: #6670ee;
+  --color-purple-600: #858df1;
+  --color-purple-700: #a3a9f5;
+  --color-purple-750: #c2c6f8;
+  --color-purple-800: #d1d4fa;
+  --color-purple-900: #e0e2fc;
+  --color-purple-gray-100: #1a1a29;
+  --color-purple-gray-200: #26273a;
+  --color-purple-gray-300: #33344b;
+  --color-purple-gray-400: #3f415c;
+  --color-purple-gray-500: #595a7e;
+  --color-purple-gray-550: #7274a0;
+  --color-purple-gray-600: #8b8ec2;
+  --color-purple-gray-650: #a2a5ce;
+  --color-purple-gray-700: #b9bbda;
+  --color-purple-gray-800: #d1d2e7;
+  --color-purple-gray-900: #dcdded;
+  --color-red: #F95993;
+  --color-yellow: #FFA901;
+  --color-green: #5EC697;
+  --border-default: 1px solid var(--color-purple-gray-650);
+  --font-family: "Montserrat", sans-serif;
+  --second-family: "Roboto", sans-serif;
+  --third-family: "HeptaSlab", serif;
+  --container-padding-inline: 24px;
+  --container-width-default: 1500px;
+  --max-viewport-width: 1920px;
+  --min-viewport-width: 375px;
+  --button-padding-block: 21px;
+  --button-padding-block-small: 12px;
+  --input-padding-block: 24px;
+  --transition: 0.4s ease;
+}
+
+@keyframes navigation-slide-in {
+  from {
+    left: -30px;
+    opacity: 0;
+  }
+  to {
+    left: 0px;
+    opacity: 1;
+  }
+}
+@keyframes navigation-slide-out {
+  from {
+    left: 0px;
+    opacity: 1;
+  }
+  to {
+    left: 30px;
+    opacity: 0;
+  }
+}
+@keyframes navigation-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.header {
+  border-block: var(--border-default);
+}
+.header__row {
+  position: relative;
+  padding-block: 22px;
+  align-items: center;
+}
+.header__logo {
+  height: auto;
+}
+@media (max-width: 1540px) {
+  .header__logo {
+    width: 100px;
+  }
+}
+@media (max-width: 1024px) {
+  .header__logo {
+    width: 72px;
+  }
+}
+@media (max-width: 768px) {
+  .header__logo {
+    width: 102px;
+  }
+}
+.header__column--navigation {
+  flex-grow: 1;
+}
+.header__navigation-list {
+  display: flex;
+  column-gap: 48px;
+  justify-content: end;
+  padding-right: 120px;
+}
+@media (max-width: 1540px) {
+  .header__navigation-list {
+    justify-content: center;
+    padding-right: 0;
+    column-gap: 24px;
+  }
+}
+@media (max-width: 1024px) {
+  .header__navigation-list {
+    column-gap: 12px;
+  }
+}
+.header__navigation-link {
+  font-size: clamp(0.5rem, 0.3786407767rem + 0.5177993528vw, 1rem);
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-purple-200);
+  position: relative;
+}
+.header__navigation-link::after {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: -30px;
+  width: 100%;
+  height: 5px;
+  background: url("../../images/icons/wave-link-bottom.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 5px;
+  transition: opacity var(--transition), left var(--transition);
+  pointer-events: none;
+}
+.header__navigation-link:hover {
+  color: var(--color-purple-200);
+}
+.header__navigation-link:hover::after {
+  animation: navigation-slide-in var(--transition) forwards;
+}
+.header__navigation-link:not(:hover)::after {
+  animation: navigation-slide-out var(--transition) forwards;
+}
+.header__navigation-link:focus-visible {
+  color: var(--color-purple-200);
+}
+.header__navigation-link:focus-visible::after {
+  animation: navigation-slide-in var(--transition) forwards;
+}
+@media (hover: none) {
+  .header__navigation-link:hover::after, .header__navigation-link:not(:hover)::after {
+    display: none;
+  }
+  .header__navigation-link:active::after {
+    animation: navigation-show var(--transition) forwards;
+    left: 0;
+    opacity: 1;
+    display: block;
+  }
+}
+
+.social-networks__navigation--burger {
+  width: 100%;
+}
+.social-networks__navigation-list {
+  display: flex;
+  column-gap: 8px;
+}
+.social-networks__navigation-list-item--pressed-right {
+  margin-left: auto;
+}
+.social-networks__navigation-link {
+  border-radius: 12px;
+  padding: 12px;
+  color: var(--color-purple-gray-500);
+  border: var(--border-default);
+  box-shadow: none;
+  transition: color var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+.social-networks__navigation-link svg {
+  position: relative;
+  left: -1px;
+}
+@media (hover: hover) {
+  .social-networks__navigation-link:hover, .social-networks__navigation-link:active, .social-networks__navigation-link:focus-visible, .social-networks__navigation-link:focus:not(:focus-visible):hover {
+    border-color: var(--color-purple-500);
+    color: var(--color-purple-400);
+    box-shadow: 0 12px 19px 0 rgba(93, 110, 171, 0.12);
+  }
+  .social-networks__navigation-link:focus:not(:focus-visible) {
+    color: var(--color-purple-gray-500);
+    border: var(--border-default);
+    box-shadow: none;
+  }
+}
+@media (hover: none) {
+  .social-networks__navigation-link:active {
+    transition: none !important;
+    border-color: var(--color-purple-500) !important;
+    color: var(--color-purple-400) !important;
+    box-shadow: 0 12px 19px 0 rgba(93, 110, 171, 0.12) !important;
+  }
+  .social-networks__navigation-link:hover, .social-networks__navigation-link:focus-visible, .social-networks__navigation-link:focus:not(:focus-visible):hover, .social-networks__navigation-link:focus:not(:focus-visible) {
+    color: var(--color-purple-gray-500);
+    border: var(--border-default);
+    box-shadow: none;
+  }
+}
+@media (max-width: 1024px) {
+  .social-networks__navigation-link {
+    padding: 6px;
+  }
+}
+.social-networks__navigation-link--long {
+  font-size: clamp(1rem, 1rem + 0vw, 1rem);
+  font-family: var(--font-family);
+  font-weight: 700;
+  line-height: 1.5;
+  padding-inline: 25px;
+  margin-left: 4px;
+}
+@media (max-width: 1024px) {
+  .social-networks__navigation-link--long {
+    font-size: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+    padding-block: 9px;
+  }
+}
+
+.burger-button {
+  position: absolute;
+  top: 22px;
+  right: 0;
+  width: 20px;
+  height: 14px;
+  padding: 5px 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.burger-button__line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-black);
+  border-radius: 2px;
+  position: relative;
+}
+.burger-button__line:first-child {
+  transition: transform var(--transition), top var(--transition);
+  width: 14px;
+}
+.burger-button__line:last-child {
+  transition: transform var(--transition), top var(--transition), width var(--transition);
+  width: 10px;
+}
+
+.burger-button--active .burger-button__line:first-child {
+  width: 100%;
+  transform: rotate(45deg);
+  top: 6px;
+}
+.burger-button--active .burger-button__line:nth-child(2) {
+  opacity: 0;
+}
+.burger-button--active .burger-button__line:last-child {
+  width: 100%;
+  transform: rotate(-45deg);
+  top: -6px;
+}
+
+.burger-menu {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  height: auto;
+}
+.burger-menu__wrapper {
+  padding-left: 40px;
+  width: 310px;
+}
+@media (max-width: 480px) {
+  .burger-menu__wrapper {
+    padding-left: 0;
+    margin-inline: auto;
+  }
+}
+.burger-menu__row--navigation {
+  padding-block: 40px;
+}
+.burger-menu__navigation-link {
+  font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 2.3;
+  color: var(--color-purple-200);
+}
+.burger-menu__row--social-networks {
+  padding-block: 22px;
+  border-top: var(--border-default);
+}
+@media (min-width: 769px) {
+  .burger-menu {
+    display: none !important;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */

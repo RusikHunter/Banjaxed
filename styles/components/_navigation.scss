@@ -1,0 +1,87 @@
+@use '../index' as *;
+
+.social-networks {
+
+    &__navigation--burger {
+        width: 100%;
+    }
+
+    &__navigation-list {
+        display: flex;
+        column-gap: 8px;
+    }
+
+    //pressing the "contact us" button in the burger menu to the right edge
+
+    &__navigation-list-item--pressed-right {
+        margin-left: auto;
+    }
+
+    &__navigation-link {
+        border-radius: 12px;
+        padding: 12px;
+        color: var(--color-purple-gray-500);
+        border: var(--border-default);
+        box-shadow: none;
+        transition: color var(--transition), border-color var(--transition), box-shadow var(--transition);
+
+        & svg {
+            // Fixing curved svg icons in the layout
+            position: relative;
+            left: -1px;
+        }
+
+        @include desktop-screen {
+
+            &:hover,
+            &:active,
+            &:focus-visible,
+            &:focus:not(:focus-visible):hover {
+                border-color: var(--color-purple-500);
+                color: var(--color-purple-400);
+                box-shadow: 0 12px 19px 0 rgba(93, 110, 171, 0.12);
+            }
+
+            &:focus:not(:focus-visible) {
+                color: var(--color-purple-gray-500);
+                border: var(--border-default);
+                box-shadow: none;
+            }
+        }
+
+        @include touch-screen {
+
+            &:active {
+                transition: none !important;
+                border-color: var(--color-purple-500) !important;
+                color: var(--color-purple-400) !important;
+                box-shadow: 0 12px 19px 0 rgba(93, 110, 171, 0.12) !important;
+            }
+
+            &:hover,
+            &:focus-visible,
+            &:focus:not(:focus-visible):hover,
+            &:focus:not(:focus-visible) {
+                color: var(--color-purple-gray-500);
+                border: var(--border-default);
+                box-shadow: none;
+            }
+        }
+
+        @include tablet {
+            padding: 6px;
+        }
+    }
+
+    &__navigation-link--long {
+        @include fluid-text(16, 16);
+        @include font(var(--font-family), 700, 1.5);
+        padding-inline: 25px;
+        margin-left: 4px;
+
+        @include tablet {
+            @include fluid-text(12, 12);
+            padding-block: 9px;
+        }
+    }
+}
