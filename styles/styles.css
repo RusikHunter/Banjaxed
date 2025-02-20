@@ -391,7 +391,8 @@ svg * {
   --color-purple-gray-700: #b9bbda;
   --color-purple-gray-800: #d1d2e7;
   --color-purple-gray-900: #dcdded;
-  --color-red: #F95993;
+  --color-red: #FF1600;
+  --color-pink: #F95993;
   --color-yellow: #FFA901;
   --color-green: #5EC697;
   --border-default: 1px solid var(--color-purple-gray-650);
@@ -531,6 +532,104 @@ svg * {
     opacity: 1;
     display: block;
   }
+}
+
+.saleforces__row {
+  padding-bottom: 500px;
+}
+.saleforces__column {
+  width: 50%;
+}
+.saleforces__column--info {
+  padding-top: 196px;
+  row-gap: 100px;
+}
+.saleforces__text-wrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  max-width: 640px;
+}
+.saleforces__title {
+  font-size: clamp(2rem, 1.5145631068rem + 2.071197411vw, 4rem);
+  font-family: var(--third-family);
+  font-weight: 400;
+  line-height: 1.12;
+  color: var(--color-purple-gray-100);
+}
+.saleforces__title--small {
+  font-size: clamp(1.5rem, 1.1359223301rem + 1.5533980583vw, 3rem);
+  position: relative;
+  top: -5px;
+}
+.saleforces__title--bold {
+  font-weight: 600;
+}
+.saleforces__description {
+  font-size: clamp(0.875rem, 0.8143203883rem + 0.2588996764vw, 1.125rem);
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 1.56;
+  color: var(--color-purple-gray-400);
+}
+.saleforces__link-wrap {
+  display: flex;
+  column-gap: 24px;
+  align-items: center;
+}
+.saleforces__separation {
+  width: 1px;
+  height: 20px;
+  background-color: var(--color-purple-gray-800);
+}
+.saleforces__column--image {
+  padding-top: 117px;
+}
+.saleforces__image-wrap {
+  position: relative;
+  display: flex;
+  margin-left: auto;
+}
+.saleforces__image-wrap::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -146px;
+  left: -160px;
+  width: 480px;
+  height: 480px;
+  background-image: url("../../images/icons/dots.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.saleforces__image-wrap::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 66px;
+  right: -139px;
+  width: 139px;
+  height: 239px;
+  background-image: url("../../images/icons/branch.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.saleforces__decoration {
+  position: absolute;
+  top: -50px;
+  left: -70px;
+  width: 197px;
+  height: 197px;
+  border: 1px solid var(--color-purple-gray-900);
+  border-radius: 30px;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.25);
+}
+.saleforces__image {
+  user-select: none;
+  pointer-events: none;
+  z-index: 99;
 }
 
 .social-networks__navigation--burger {
@@ -674,6 +773,71 @@ svg * {
 @media (min-width: 769px) {
   .burger-menu {
     display: none !important;
+  }
+}
+
+.link--purple {
+  display: inline-flex;
+  font-size: clamp(0.75rem, 0.6893203883rem + 0.2588996764vw, 1rem);
+  font-family: var(--font-family);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-white);
+  background-color: var(--color-purple-500);
+  transition: transform var(--transition), box-shadow var(--transition);
+  width: 208px;
+  justify-content: center;
+  padding-block: 21px;
+  border-radius: 12px;
+}
+@media (max-width: 768px) {
+  .link--purple {
+    width: 144px;
+    padding-block: 17px;
+    border-radius: 9px;
+  }
+}
+@media (hover: hover) {
+  .link--purple:hover, .link--purple:active, .link--purple:visited {
+    color: var(--color-white);
+  }
+  .link--purple:hover, .link--purple:focus-visible {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px 0 rgba(14, 68, 152, 0.15);
+  }
+}
+@media (hover: none) {
+  .link--purple:hover, .link--purple:visited, .link--purple:focus, .link--purple:focus-visible {
+    color: var(--color-white);
+    transform: none;
+  }
+}
+
+.link--youtube {
+  color: var(--color-red);
+  align-items: center;
+  column-gap: 15px;
+}
+.link--youtube svg {
+  transition: transform var(--transition);
+}
+.link--youtube span {
+  font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+  font-family: var(--font-family);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-purple-gray-100);
+}
+@media (hover: hover) {
+  .link--youtube:hover svg, .link--youtube:active svg, .link--youtube:visited svg, .link--youtube:focus-visible svg {
+    transform: scale(1.1);
+    color: var(--color-red);
+  }
+}
+@media (hover: none) {
+  .link--youtube:hover svg, .link--youtube:active svg, .link--youtube:visited svg, .link--youtube:focus-visible svg {
+    transform: none;
+    color: var(--color-red);
   }
 }
 

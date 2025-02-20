@@ -8,8 +8,10 @@
 @use "keyframes";
 @use 'index' as *;
 
-@use 'blocks/header';
+@use 'sections/header';
+@use 'sections/saleforces';
 
 @use 'components/navigation';
 @use 'components/burger-button';
 @use 'components/burger-menu';
+@use 'components/link';
