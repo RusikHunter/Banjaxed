@@ -119,6 +119,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
+            animation: salesforce-svg-element-loading 0.8s forwards;
         }
 
         @media (max-width: 1840px) {
@@ -182,6 +183,7 @@
         border: 1px solid var(--color-purple-gray-900);
         border-radius: 30px;
         box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.25);
+        animation: salesforce-decoration-element-loading 0.8s forwards;
 
         @media (max-width: 1335px) {
             $scale-ratio: 0.6;
@@ -210,6 +212,9 @@
         user-select: none;
         pointer-events: none;
         z-index: 99;
+        position: relative;
+        right: 0;
+        animation: salesforce-image-loading 0.8s forwards;
     }
 
     &__column--mobile-image {
@@ -242,5 +247,7 @@
     &__image--mobile {
         user-select: none;
         pointer-events: none;
+        position: relative;
+        animation: salesforce-image-loading 0.8s forwards;
     }
 }
