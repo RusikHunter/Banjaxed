@@ -1,6 +1,9 @@
 @use '../index' as *;
 
 .header {
+    position: relative;
+    z-index: 1000;
+    background-color: var(--color-white);
     border-block: var(--border-default);
 
     &__row {

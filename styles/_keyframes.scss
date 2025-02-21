@@ -31,3 +31,23 @@
         opacity: 1;
     }
 }
+
+@keyframes burger-menu-open {
+    from {
+        top: -500px;
+    }
+
+    to {
+        top: 75px;
+    }
+}
+
+@keyframes burger-menu-close {
+    from {
+        top: 75px;
+    }
+
+    to {
+        top: -500px;
+    }
+}

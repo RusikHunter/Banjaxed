@@ -5,6 +5,9 @@
     border: 0;
     padding: 0;
     height: auto;
+    z-index: 99;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
 
     &__wrapper {
         padding-left: 40px;

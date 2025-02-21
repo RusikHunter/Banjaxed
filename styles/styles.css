@@ -441,7 +441,26 @@ svg * {
     opacity: 1;
   }
 }
+@keyframes burger-menu-open {
+  from {
+    top: -500px;
+  }
+  to {
+    top: 75px;
+  }
+}
+@keyframes burger-menu-close {
+  from {
+    top: 75px;
+  }
+  to {
+    top: -500px;
+  }
+}
 .header {
+  position: relative;
+  z-index: 1000;
+  background-color: var(--color-white);
   border-block: var(--border-default);
 }
 .header__row {
@@ -873,6 +892,9 @@ svg * {
   border: 0;
   padding: 0;
   height: auto;
+  z-index: 99;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
 }
 .burger-menu__wrapper {
   padding-left: 40px;
