@@ -75,13 +75,13 @@
             color: var(--color-purple-200);
 
             &::after {
-                animation: navigation-slide-in var(--transition) forwards;
+                animation: header-navigation-slide-in var(--transition) forwards;
             }
         }
 
         &:not(:hover) {
             &::after {
-                animation: navigation-slide-out var(--transition) forwards;
+                animation: header-navigation-slide-out var(--transition) forwards;
             }
         }
 
@@ -89,7 +89,7 @@
             color: var(--color-purple-200);
 
             &::after {
-                animation: navigation-slide-in var(--transition) forwards;
+                animation: header-navigation-slide-in var(--transition) forwards;
             }
         }
 
@@ -104,7 +104,7 @@
 
             &:active {
                 &::after {
-                    animation: navigation-show var(--transition) forwards;
+                    animation: header-navigation-show var(--transition) forwards;
                     left: 0;
                     opacity: 1;
                     display: block;

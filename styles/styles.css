@@ -413,7 +413,7 @@ svg * {
   --transition: 0.4s ease;
 }
 
-@keyframes navigation-slide-in {
+@keyframes header-navigation-slide-in {
   from {
     left: -30px;
     opacity: 0;
@@ -423,7 +423,7 @@ svg * {
     opacity: 1;
   }
 }
-@keyframes navigation-slide-out {
+@keyframes header-navigation-slide-out {
   from {
     left: 0px;
     opacity: 1;
@@ -433,7 +433,7 @@ svg * {
     opacity: 0;
   }
 }
-@keyframes navigation-show {
+@keyframes header-navigation-show {
   from {
     opacity: 0;
   }
@@ -515,23 +515,23 @@ svg * {
   color: var(--color-purple-200);
 }
 .header__navigation-link:hover::after {
-  animation: navigation-slide-in var(--transition) forwards;
+  animation: header-navigation-slide-in var(--transition) forwards;
 }
 .header__navigation-link:not(:hover)::after {
-  animation: navigation-slide-out var(--transition) forwards;
+  animation: header-navigation-slide-out var(--transition) forwards;
 }
 .header__navigation-link:focus-visible {
   color: var(--color-purple-200);
 }
 .header__navigation-link:focus-visible::after {
-  animation: navigation-slide-in var(--transition) forwards;
+  animation: header-navigation-slide-in var(--transition) forwards;
 }
 @media (hover: none) {
   .header__navigation-link:hover::after, .header__navigation-link:not(:hover)::after {
     display: none;
   }
   .header__navigation-link:active::after {
-    animation: navigation-show var(--transition) forwards;
+    animation: header-navigation-show var(--transition) forwards;
     left: 0;
     opacity: 1;
     display: block;

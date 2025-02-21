@@ -1,4 +1,4 @@
-@keyframes navigation-slide-in {
+@keyframes header-navigation-slide-in {
     from {
         left: -30px;
         opacity: 0;
@@ -10,7 +10,7 @@
     }
 }
 
-@keyframes navigation-slide-out {
+@keyframes header-navigation-slide-out {
     from {
         left: 0px;
         opacity: 1;
@@ -22,7 +22,7 @@
     }
 }
 
-@keyframes navigation-show {
+@keyframes header-navigation-show {
     from {
         opacity: 0;
     }
