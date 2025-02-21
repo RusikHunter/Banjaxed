@@ -1,8 +1,6 @@
 @use "../index" as *;
 
-.saleforces {
-
-    &__inner {}
+.salesforce {
 
     &__row {
         @include laptop {
@@ -29,16 +27,16 @@
             row-gap: 60px;
         }
 
-        @media (max-width: 1024px) {
+        @include tablet {
             padding-top: 90px;
             row-gap: 40px;
         }
 
-        @media (max-width: 768px) {
+        @include mobile {
             width: 100%;
         }
 
-        @media (max-width: 480px) {
+        @include mobile-small {
             padding-top: 55px;
         }
     }
@@ -62,8 +60,7 @@
 
     &__title--small {
         @include fluid-text(48, 24);
-        position: relative;
-        top: -5px;
+        vertical-align: 0.1em;
     }
 
     &__title--bold {
@@ -82,15 +79,14 @@
         align-items: center;
     }
 
-    &__link {}
-
-    &__link--purple {}
-
     &__separation {
         width: 1px;
         height: 20px;
         background-color: var(--color-purple-gray-800);
     }
+
+    // This section uses local media queries
+    // and SCSS variables to adapt the decorative image
 
     &__column--image {
         position: relative;
@@ -125,8 +121,6 @@
             background-position: center;
         }
 
-        // local media queries for decorative image adaptation
-
         @media (max-width: 1840px) {
             margin-right: 139px;
         }
@@ -154,7 +148,7 @@
             }
         }
 
-        @media (max-width: 1024px) {
+        @include tablet {
             $scale-ratio: 0.4;
             $x-indent: 60px;
 
@@ -176,10 +170,6 @@
                 width: calc(139px * $scale-ratio);
                 height: calc(239px * $scale-ratio);
             }
-        }
-
-        @media (max-width: 768px) {
-            width: 100%;
         }
     }
 
@@ -203,7 +193,7 @@
             height: calc(197px * $scale-ratio);
         }
 
-        @media (max-width: 1024px) {
+        @include tablet {
             $scale-ratio: 0.4;
             $x-indent: 60px;
 
