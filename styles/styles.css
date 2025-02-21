@@ -315,7 +315,11 @@ svg * {
   max-width: var(--container-width-default);
   width: 100%;
   margin-inline: auto;
-  padding-inline: var(--container-padding-inline);
+}
+@media (max-width: 1540px) {
+  .container {
+    padding-inline: var(--container-padding-inline);
+  }
 }
 .row {
   display: flex;
@@ -391,7 +395,8 @@ svg * {
   --color-purple-gray-700: #b9bbda;
   --color-purple-gray-800: #d1d2e7;
   --color-purple-gray-900: #dcdded;
-  --color-red: #F95993;
+  --color-red: #FF1600;
+  --color-pink: #F95993;
   --color-yellow: #FFA901;
   --color-green: #5EC697;
   --border-default: 1px solid var(--color-purple-gray-650);
@@ -408,7 +413,7 @@ svg * {
   --transition: 0.4s ease;
 }
 
-@keyframes navigation-slide-in {
+@keyframes header-navigation-slide-in {
   from {
     left: -30px;
     opacity: 0;
@@ -418,7 +423,7 @@ svg * {
     opacity: 1;
   }
 }
-@keyframes navigation-slide-out {
+@keyframes header-navigation-slide-out {
   from {
     left: 0px;
     opacity: 1;
@@ -428,7 +433,7 @@ svg * {
     opacity: 0;
   }
 }
-@keyframes navigation-show {
+@keyframes header-navigation-show {
   from {
     opacity: 0;
   }
@@ -436,7 +441,100 @@ svg * {
     opacity: 1;
   }
 }
+@keyframes burger-menu-open {
+  from {
+    top: -500px;
+  }
+  to {
+    top: 75px;
+  }
+}
+@keyframes burger-menu-close {
+  from {
+    top: 75px;
+  }
+  to {
+    top: -500px;
+  }
+}
+@keyframes salesforce-image-loading {
+  from {
+    opacity: 0;
+    right: -100px;
+  }
+  to {
+    opacity: 1;
+    right: 0;
+  }
+}
+@keyframes salesforce-svg-element-loading {
+  from {
+    opacity: 0.5;
+    right: -238px;
+  }
+  to {
+    opacity: 1;
+    right: -138px;
+  }
+}
+@keyframes salesforce-decoration-element-loading {
+  from {
+    opacity: 0.5;
+    left: -100px;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+@media (max-width: 1335px) {
+  @keyframes salesforce-svg-element-loading {
+    from {
+      opacity: 0.5;
+      right: -182.8px;
+    }
+    to {
+      opacity: 1;
+      right: -82.8px;
+    }
+  }
+  @keyframes salesforce-decoration-element-loading {
+    from {
+      opacity: 0.5;
+      left: -135px;
+    }
+    to {
+      opacity: 1;
+      left: -35px;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  @keyframes salesforce-svg-element-loading {
+    from {
+      opacity: 0.5;
+      right: -155.2px;
+    }
+    to {
+      opacity: 1;
+      right: -55.2px;
+    }
+  }
+  @keyframes salesforce-decoration-element-loading {
+    from {
+      opacity: 0.5;
+      left: -125px;
+    }
+    to {
+      opacity: 1;
+      left: -25px;
+    }
+  }
+}
 .header {
+  position: relative;
+  z-index: 1000;
+  background-color: var(--color-white);
   border-block: var(--border-default);
 }
 .header__row {
@@ -510,27 +608,256 @@ svg * {
   color: var(--color-purple-200);
 }
 .header__navigation-link:hover::after {
-  animation: navigation-slide-in var(--transition) forwards;
+  animation: header-navigation-slide-in var(--transition) forwards;
 }
 .header__navigation-link:not(:hover)::after {
-  animation: navigation-slide-out var(--transition) forwards;
+  animation: header-navigation-slide-out var(--transition) forwards;
 }
 .header__navigation-link:focus-visible {
   color: var(--color-purple-200);
 }
 .header__navigation-link:focus-visible::after {
-  animation: navigation-slide-in var(--transition) forwards;
+  animation: header-navigation-slide-in var(--transition) forwards;
 }
 @media (hover: none) {
   .header__navigation-link:hover::after, .header__navigation-link:not(:hover)::after {
     display: none;
   }
   .header__navigation-link:active::after {
-    animation: navigation-show var(--transition) forwards;
+    animation: header-navigation-show var(--transition) forwards;
     left: 0;
     opacity: 1;
     display: block;
   }
+}
+
+@media (max-width: 1540px) {
+  .salesforce__row {
+    column-gap: 48px;
+  }
+}
+@media (max-width: 768px) {
+  .salesforce__row {
+    flex-direction: column;
+    row-gap: 36px;
+  }
+}
+.salesforce__column {
+  width: 50%;
+}
+.salesforce__column--info {
+  padding-top: 196px;
+  row-gap: 100px;
+  flex: 1;
+}
+@media (max-width: 1335px) {
+  .salesforce__column--info {
+    padding-top: 100px;
+    row-gap: 60px;
+  }
+}
+@media (max-width: 1024px) {
+  .salesforce__column--info {
+    padding-top: 90px;
+    row-gap: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .salesforce__column--info {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .salesforce__column--info {
+    padding-top: 55px;
+  }
+}
+.salesforce__text-wrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  max-width: 640px;
+}
+@media (max-width: 480px) {
+  .salesforce__text-wrap {
+    row-gap: 12px;
+  }
+}
+.salesforce__title {
+  font-size: clamp(2rem, 1.5145631068rem + 2.071197411vw, 4rem);
+  font-family: var(--third-family);
+  font-weight: 400;
+  line-height: 1.12;
+  color: var(--color-purple-gray-100);
+}
+.salesforce__title--small {
+  font-size: clamp(1.5rem, 1.1359223301rem + 1.5533980583vw, 3rem);
+  vertical-align: 0.1em;
+}
+.salesforce__title--bold {
+  font-weight: 600;
+}
+.salesforce__description {
+  font-size: clamp(0.875rem, 0.8143203883rem + 0.2588996764vw, 1.125rem);
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 1.56;
+  color: var(--color-purple-gray-400);
+}
+.salesforce__link-wrap {
+  display: flex;
+  column-gap: 24px;
+  align-items: center;
+}
+.salesforce__separation {
+  width: 1px;
+  height: 20px;
+  background-color: var(--color-purple-gray-800);
+}
+.salesforce__column--image {
+  position: relative;
+  padding-top: 117px;
+  width: 625px;
+}
+.salesforce__column--image::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -146px;
+  left: -89px;
+  width: 480px;
+  height: 480px;
+  background-image: url("../../images/icons/dots.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.salesforce__column--image::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 183px;
+  right: -138px;
+  width: 139px;
+  height: 239px;
+  background-image: url("../../images/icons/branch.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: salesforce-svg-element-loading 0.8s forwards;
+}
+@media (max-width: 1840px) {
+  .salesforce__column--image {
+    margin-right: 139px;
+  }
+}
+@media (max-width: 1335px) {
+  .salesforce__column--image {
+    width: 375px;
+    padding-top: 70.2px;
+    margin-right: 83.4px;
+  }
+  .salesforce__column--image::before {
+    bottom: 0;
+    top: 310px;
+    left: -110px;
+    width: 288px;
+    height: 288px;
+  }
+  .salesforce__column--image::after {
+    top: 109.8px;
+    right: -82.8px;
+    width: 83.4px;
+    height: 143.4px;
+  }
+}
+@media (max-width: 1024px) {
+  .salesforce__column--image {
+    width: 250px;
+    padding-top: 106.8px;
+    margin-right: 55.6px;
+  }
+  .salesforce__column--image::before {
+    bottom: 0;
+    top: 290px;
+    left: -85px;
+    width: 192px;
+    height: 192px;
+  }
+  .salesforce__column--image::after {
+    top: 133.2px;
+    right: -55.2px;
+    width: 55.6px;
+    height: 95.6px;
+  }
+}
+.salesforce__decoration {
+  position: absolute;
+  top: 68px;
+  left: 0;
+  width: 197px;
+  height: 197px;
+  border: 1px solid var(--color-purple-gray-900);
+  border-radius: 30px;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.25);
+  animation: salesforce-decoration-element-loading 0.8s forwards;
+}
+@media (max-width: 1335px) {
+  .salesforce__decoration {
+    top: 50px;
+    left: -35px;
+    border-radius: 18px;
+    width: 118.2px;
+    height: 118.2px;
+  }
+}
+@media (max-width: 1024px) {
+  .salesforce__decoration {
+    top: 90px;
+    left: -25px;
+    border-radius: 15px;
+    width: 78.8px;
+    height: 78.8px;
+  }
+}
+.salesforce__image {
+  margin-left: auto;
+  user-select: none;
+  pointer-events: none;
+  z-index: 99;
+  position: relative;
+  right: 0;
+  animation: salesforce-image-loading 0.8s forwards;
+}
+.salesforce__column--mobile-image {
+  position: relative;
+  width: 100%;
+}
+.salesforce__image--mobile-wrap {
+  position: relative;
+  width: 335px;
+  margin-inline: auto;
+  z-index: 99;
+}
+.salesforce__image--mobile-wrap::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -110px;
+  left: -110px;
+  width: 269px;
+  height: 269px;
+  background-image: url("../../images/icons/dots.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+.salesforce__image--mobile {
+  user-select: none;
+  pointer-events: none;
+  position: relative;
+  animation: salesforce-image-loading 0.8s forwards;
 }
 
 .social-networks__navigation--burger {
@@ -646,6 +973,9 @@ svg * {
   border: 0;
   padding: 0;
   height: auto;
+  z-index: 99;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
 }
 .burger-menu__wrapper {
   padding-left: 40px;
@@ -674,6 +1004,76 @@ svg * {
 @media (min-width: 769px) {
   .burger-menu {
     display: none !important;
+  }
+}
+
+.link--purple {
+  display: inline-flex;
+  font-size: clamp(0.75rem, 0.6893203883rem + 0.2588996764vw, 1rem);
+  font-family: var(--font-family);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-white);
+  background-color: var(--color-purple-500);
+  transition: transform var(--transition), box-shadow var(--transition);
+  width: 208px;
+  justify-content: center;
+  padding-block: 21px;
+  border-radius: 12px;
+}
+@media (max-width: 768px) {
+  .link--purple {
+    width: 144px;
+    padding-block: 17px;
+    border-radius: 9px;
+  }
+}
+@media (hover: hover) {
+  .link--purple:hover, .link--purple:active, .link--purple:visited {
+    color: var(--color-white);
+  }
+  .link--purple:hover, .link--purple:focus-visible {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px 0 rgba(14, 68, 152, 0.15);
+  }
+}
+@media (hover: none) {
+  .link--purple:hover, .link--purple:visited, .link--purple:focus, .link--purple:focus-visible {
+    color: var(--color-white);
+    transform: none;
+  }
+}
+
+.link--youtube {
+  color: var(--color-red);
+  align-items: center;
+  column-gap: 15px;
+}
+.link--youtube svg {
+  transition: transform var(--transition);
+}
+.link--youtube span {
+  font-size: clamp(0.84375rem, 0.8361650485rem + 0.0323624595vw, 0.875rem);
+  font-family: var(--font-family);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-purple-gray-100);
+}
+@media (max-width: 480px) {
+  .link--youtube span {
+    display: none;
+  }
+}
+@media (hover: hover) {
+  .link--youtube:hover svg, .link--youtube:active svg, .link--youtube:visited svg, .link--youtube:focus-visible svg {
+    transform: scale(1.1);
+    color: var(--color-red);
+  }
+}
+@media (hover: none) {
+  .link--youtube:hover svg, .link--youtube:active svg, .link--youtube:visited svg, .link--youtube:focus-visible svg {
+    transform: none;
+    color: var(--color-red);
   }
 }
 

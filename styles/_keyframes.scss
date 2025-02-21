@@ -1,4 +1,6 @@
-@keyframes navigation-slide-in {
+@use "media" as *;
+
+@keyframes header-navigation-slide-in {
     from {
         left: -30px;
         opacity: 0;
@@ -10,7 +12,7 @@
     }
 }
 
-@keyframes navigation-slide-out {
+@keyframes header-navigation-slide-out {
     from {
         left: 0px;
         opacity: 1;
@@ -22,12 +24,124 @@
     }
 }
 
-@keyframes navigation-show {
+@keyframes header-navigation-show {
     from {
         opacity: 0;
     }
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes burger-menu-open {
+    from {
+        top: -500px;
+    }
+
+    to {
+        top: 75px;
+    }
+}
+
+@keyframes burger-menu-close {
+    from {
+        top: 75px;
+    }
+
+    to {
+        top: -500px;
+    }
+}
+
+@keyframes salesforce-image-loading {
+    from {
+        opacity: 0;
+        right: -100px;
+    }
+
+    to {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+@keyframes salesforce-svg-element-loading {
+    from {
+        opacity: 0.5;
+        right: -238px;
+    }
+
+    to {
+        opacity: 1;
+        right: -138px;
+    }
+}
+
+@keyframes salesforce-decoration-element-loading {
+    from {
+        opacity: 0.5;
+        left: -100px;
+    }
+
+    to {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@media (max-width: 1335px) {
+    $scale-ratio: 0.6;
+
+    @keyframes salesforce-svg-element-loading {
+        from {
+            opacity: 0.5;
+            right: calc(-138px * $scale-ratio) - 100px;
+        }
+
+        to {
+            opacity: 1;
+            right: calc(-138px * $scale-ratio);
+        }
+    }
+
+    @keyframes salesforce-decoration-element-loading {
+        from {
+            opacity: 0.5;
+            left: -135px;
+        }
+
+        to {
+            opacity: 1;
+            left: -35px;
+        }
+    }
+}
+
+@include tablet {
+    $scale-ratio: 0.4;
+
+    @keyframes salesforce-svg-element-loading {
+        from {
+            opacity: 0.5;
+            right: calc(-138px * 0.4) - 100px;
+        }
+
+        to {
+            opacity: 1;
+            right: calc(-138px * $scale-ratio);
+        }
+    }
+
+    @keyframes salesforce-decoration-element-loading {
+        from {
+            opacity: 0.5;
+            left: -125px;
+        }
+
+        to {
+            opacity: 1;
+            left: -25px;
+        }
     }
 }
