@@ -55,9 +55,13 @@
     }
 
     span {
-        @include fluid-text(14, 14);
+        @include fluid-text(14, 13.5);
         @include font(var(--font-family), 600, 1);
         color: var(--color-purple-gray-100);
+
+        @include mobile-small {
+            display: none;
+        }
     }
 
     @include desktop-screen {
