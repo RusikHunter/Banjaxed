@@ -1,0 +1,374 @@
+@use "../index" as *;
+
+.services {
+
+    &__inner {
+        @include tablet {
+            padding-inline: 0;
+        }
+    }
+
+    &__row--text {
+        padding-top: 147px;
+        flex-direction: column;
+        row-gap: 20px;
+
+        @include tablet {
+            padding-top: 110px;
+            padding-inline: var(--container-padding-inline);
+        }
+
+        @include mobile {
+            width: 80%;
+            margin-inline: auto
+        }
+
+        @include mobile-small {
+            width: 100%;
+            padding-top: 43px;
+            row-gap: 14px;
+        }
+    }
+
+    &__title {
+        @include fluid-text(36, 20);
+        @include font(var(--third-family), 700, 1);
+        color: var(--color-purple-gray-100);
+        text-align: center;
+    }
+
+    &__description {
+        @include fluid-text(16, 12);
+        @include font(var(--font-family), 400, 1.25);
+        color: var(--color-purple-gray-400);
+        text-align: center;
+        max-width: 650px;
+        margin-inline: auto;
+    }
+
+    &__description--violet {
+        font-weight: 700;
+        color: var(--color-purple-500);
+    }
+
+    &__row--features {
+        width: 100%;
+        padding-block: 85px 36px;
+    }
+
+    &__features-grid {
+        width: 1190px;
+        margin-inline: auto;
+        position: relative;
+        display: grid;
+        grid-template-rows: 257px 257px;
+        grid-template-columns: 420px 1fr 420px;
+        grid-template-areas:
+            "a e c"
+            "b e d";
+
+        @media (max-width: 1238px) {
+            width: 986px;
+            grid-template-columns: 318px 1fr 318px;
+        }
+
+        @include tablet {
+            width: 100%;
+            grid-template-rows: repeat(4, 257px);
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "a"
+                "c"
+                "b"
+                "d";
+        }
+
+        @include mobile-small {
+            grid-template-rows: repeat(4, 210px);
+        }
+    }
+
+    &__feature {
+        display: flex;
+        column-gap: 9px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 215px;
+            border-top: 2px dashed var(--color-purple-gray-800);
+        }
+
+        @include tablet {
+            width: 520px;
+            margin-inline: auto;
+
+            &::after {
+                width: 25%;
+            }
+        }
+
+        @include mobile {
+            width: 100%;
+            padding-inline: 40px;
+
+            &::after {
+                width: 55px;
+            }
+        }
+
+        @include mobile-small {
+            column-gap: 0;
+        }
+    }
+
+    &__feature--content-reverse {
+        flex-direction: row-reverse;
+    }
+
+    // Many styles in selectors --a, --b, --c, --d are repeated,
+    //because if you put them in common selectors, the styles break
+
+    &__feature--a {
+        grid-area: a;
+
+        &::after {
+            top: 110px;
+            right: -196px;
+            transform: rotate(37deg);
+        }
+
+        @include tablet {
+            &::after {
+                top: 95px;
+                right: -109px;
+                transform: rotate(50deg);
+            }
+        }
+
+        @include mobile {
+            &::after {
+                top: 66px;
+                right: -6px;
+            }
+        }
+
+        @include mobile-small {
+            &::after {
+                top: 46px;
+            }
+        }
+    }
+
+    &__feature--b {
+        grid-area: b;
+
+        &::after {
+            top: -19px;
+            right: -196px;
+            transform: rotate(-37deg);
+        }
+
+        @include tablet {
+            &::after {
+                top: 95px;
+                right: -109px;
+                transform: rotate(50deg);
+            }
+        }
+
+        @include mobile {
+            &::after {
+                top: 66px;
+                right: -6px;
+            }
+        }
+
+        @include mobile-small {
+            &::after {
+                top: 46px;
+            }
+        }
+    }
+
+    &__feature--c {
+        grid-area: c;
+
+        &::after {
+            top: 110px;
+            left: -196px;
+            transform: rotate(-37deg);
+        }
+
+        @include tablet {
+            &::after {
+                top: 95px;
+                left: -109px;
+                transform: rotate(-50deg);
+            }
+        }
+
+        @include mobile {
+            &::after {
+                top: 66px;
+                left: -6px;
+            }
+        }
+
+        @include mobile-small {
+            &::after {
+                top: 46px;
+            }
+        }
+    }
+
+    &__feature--d {
+        grid-area: d;
+
+        &::after {
+            top: -19px;
+            left: -196px;
+            transform: rotate(37deg);
+        }
+
+        @include tablet {
+            &::after {
+                top: 95px;
+                left: -109px;
+                transform: rotate(-50deg);
+            }
+        }
+
+        @include mobile {
+            &::after {
+                top: 66px;
+                left: -6px;
+            }
+        }
+
+        @include mobile-small {
+            &::after {
+                top: 46px;
+            }
+        }
+    }
+
+    &__feature--e {
+        grid-area: e;
+    }
+
+    &__feature-icon-decoration {
+        flex-shrink: 0;
+        min-width: 90px;
+        min-height: 90px;
+        width: 90px;
+        height: 90px;
+        border-radius: 21px;
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    &__feature-icon-decoration--data {
+        background-color: #73BCFF;
+
+        &::after {
+            width: 138px;
+            height: 160px;
+            top: -55px;
+            left: -35px;
+            background-image: url("../../images/icons/data-management.svg");
+        }
+    }
+
+    &__feature-icon-decoration--admin {
+        background-color: #FFB800;
+
+        &::after {
+            width: 109px;
+            height: 149px;
+            top: -45px;
+            left: -14px;
+            background-image: url("../../images/icons/admin-services.svg");
+        }
+    }
+
+    &__feature-icon-decoration--development {
+        background-color: #7FC6A6;
+
+        &::after {
+            width: 117px;
+            height: 134px;
+            top: -29px;
+            left: -15px;
+            background-image: url("../../images/icons/development-services.svg");
+        }
+    }
+
+    &__feature-icon-decoration--solution {
+        background-color: #FF619A;
+
+        &::after {
+            width: 124px;
+            height: 126px;
+            top: -19px;
+            left: -15px;
+            background-image: url("../../images/icons/solution-architecture.svg");
+        }
+    }
+
+    &__feature-textbox {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+        padding: 11px 20px;
+        border-top: 2px dashed var(--color-purple-gray-800);
+        margin-top: 45px;
+
+        @media (max-width: 1238px) {
+            padding-inline: 10px;
+        }
+
+        @include mobile-small {
+            margin-top: 25px;
+            padding-top: 17px;
+            row-gap: 8px;
+        }
+    }
+
+    &__feature-title {
+        @include fluid-text(24, 14);
+        @include font(var(--font-family), 600, 1.33);
+        color: var(--color-black);
+    }
+
+    &__feature-description {
+        @include fluid-text(16, 12);
+        @include font(var(--font-family), 400, 1.37);
+        color: var(--color-black);
+    }
+
+    &__feature-decoration {
+        $half-image-width: 56px;
+        $half-image-height: 87px;
+
+        position: absolute;
+        left: calc(50% - $half-image-width);
+        top: 95px;
+        z-index: 9;
+
+        @include tablet {
+            display: none;
+        }
+    }
+}
