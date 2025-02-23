@@ -933,14 +933,14 @@ svg * {
 @media (max-width: 1024px) {
   .services__features-grid {
     width: 100%;
-    grid-template-rows: 257px 257px 257px 257px;
+    grid-template-rows: repeat(4, 257px);
     grid-template-columns: 1fr;
     grid-template-areas: "a" "c" "b" "d";
   }
 }
 @media (max-width: 480px) {
   .services__features-grid {
-    grid-template-rows: 210px 210px 210px 210px;
+    grid-template-rows: repeat(4, 210px);
   }
 }
 .services__feature {
