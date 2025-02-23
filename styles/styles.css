@@ -860,10 +860,34 @@ svg * {
   animation: salesforce-image-loading 0.8s forwards;
 }
 
+@media (max-width: 1024px) {
+  .services__inner {
+    padding-inline: 0;
+  }
+}
 .services__row--text {
   padding-top: 147px;
   flex-direction: column;
   row-gap: 20px;
+}
+@media (max-width: 1024px) {
+  .services__row--text {
+    padding-top: 110px;
+    padding-inline: var(--container-padding-inline);
+  }
+}
+@media (max-width: 768px) {
+  .services__row--text {
+    width: 80%;
+    margin-inline: auto;
+  }
+}
+@media (max-width: 480px) {
+  .services__row--text {
+    width: 100%;
+    padding-top: 43px;
+    row-gap: 14px;
+  }
 }
 .services__title {
   font-size: clamp(1.25rem, 1.0072815534rem + 1.0355987055vw, 2.25rem);
@@ -888,16 +912,31 @@ svg * {
   color: var(--color-purple-500);
 }
 .services__row--features {
-  padding-inline: 155px;
-  padding-bottom: 36px;
+  width: 100%;
+  padding-block: 85px 36px;
 }
 .services__features-grid {
-  width: 100%;
+  width: 1190px;
+  margin-inline: auto;
   position: relative;
   display: grid;
   grid-template-rows: 257px 257px;
   grid-template-columns: 420px 1fr 420px;
   grid-template-areas: "a e c" "b e d";
+}
+@media (max-width: 1238px) {
+  .services__features-grid {
+    width: 986px;
+    grid-template-columns: 318px 1fr 318px;
+  }
+}
+@media (max-width: 1024px) {
+  .services__features-grid {
+    width: 100%;
+    grid-template-rows: 257px 257px 257px 257px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "a" "c" "b" "d";
+  }
 }
 .services__feature {
   display: flex;
@@ -910,6 +949,24 @@ svg * {
   width: 215px;
   border-top: 2px dashed var(--color-purple-gray-800);
 }
+@media (max-width: 1024px) {
+  .services__feature {
+    width: 520px;
+    margin-inline: auto;
+  }
+  .services__feature::after {
+    width: 25%;
+  }
+}
+@media (max-width: 768px) {
+  .services__feature {
+    width: 100%;
+    padding-inline: 40px;
+  }
+  .services__feature::after {
+    width: 55px;
+  }
+}
 .services__feature--content-reverse {
   flex-direction: row-reverse;
 }
@@ -921,6 +978,19 @@ svg * {
   right: -196px;
   transform: rotate(37deg);
 }
+@media (max-width: 1024px) {
+  .services__feature--a::after {
+    top: 95px;
+    right: -109px;
+    transform: rotate(50deg);
+  }
+}
+@media (max-width: 768px) {
+  .services__feature--a::after {
+    top: 66px;
+    right: -6px;
+  }
+}
 .services__feature--b {
   grid-area: b;
 }
@@ -928,6 +998,19 @@ svg * {
   top: -19px;
   right: -196px;
   transform: rotate(-37deg);
+}
+@media (max-width: 1024px) {
+  .services__feature--b::after {
+    top: 95px;
+    right: -109px;
+    transform: rotate(50deg);
+  }
+}
+@media (max-width: 768px) {
+  .services__feature--b::after {
+    top: 66px;
+    right: -6px;
+  }
 }
 .services__feature--c {
   grid-area: c;
@@ -937,6 +1020,19 @@ svg * {
   left: -196px;
   transform: rotate(-37deg);
 }
+@media (max-width: 1024px) {
+  .services__feature--c::after {
+    top: 95px;
+    left: -109px;
+    transform: rotate(-50deg);
+  }
+}
+@media (max-width: 768px) {
+  .services__feature--c::after {
+    top: 66px;
+    left: -6px;
+  }
+}
 .services__feature--d {
   grid-area: d;
 }
@@ -944,6 +1040,19 @@ svg * {
   top: -19px;
   left: -196px;
   transform: rotate(37deg);
+}
+@media (max-width: 1024px) {
+  .services__feature--d::after {
+    top: 95px;
+    left: -109px;
+    transform: rotate(-50deg);
+  }
+}
+@media (max-width: 768px) {
+  .services__feature--d::after {
+    top: 66px;
+    left: -6px;
+  }
 }
 .services__feature--e {
   grid-area: e;
@@ -960,6 +1069,11 @@ svg * {
   padding: 11px 20px;
   border-top: 2px dashed var(--color-purple-gray-800);
   margin-top: 45px;
+}
+@media (max-width: 1238px) {
+  .services__feature-textbox {
+    padding-inline: 10px;
+  }
 }
 .services__feature-title {
   font-size: clamp(0.875rem, 0.7233009709rem + 0.6472491909vw, 1.5rem);
@@ -979,6 +1093,12 @@ svg * {
   position: absolute;
   left: calc(50% - 56px);
   top: 95px;
+  z-index: 9;
+}
+@media (max-width: 1024px) {
+  .services__feature-decoration {
+    display: none;
+  }
 }
 
 .social-networks__navigation--burger {

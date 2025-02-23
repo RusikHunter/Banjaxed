@@ -2,7 +2,11 @@
 
 .services {
 
-    &__inner {}
+    &__inner {
+        @include tablet {
+            padding-inline: 0;
+        }
+    }
 
     &__row {}
 
@@ -10,6 +14,22 @@
         padding-top: 147px;
         flex-direction: column;
         row-gap: 20px;
+
+        @include tablet {
+            padding-top: 110px;
+            padding-inline: var(--container-padding-inline);
+        }
+
+        @include mobile {
+            width: 80%;
+            margin-inline: auto
+        }
+
+        @include mobile-small {
+            width: 100%;
+            padding-top: 43px;
+            row-gap: 14px;
+        }
     }
 
     &__title {
@@ -34,12 +54,13 @@
     }
 
     &__row--features {
-        padding-inline: 155px;
-        padding-bottom: 36px;
+        width: 100%;
+        padding-block: 85px 36px;
     }
 
     &__features-grid {
-        width: 100%;
+        width: 1190px;
+        margin-inline: auto;
         position: relative;
         display: grid;
         grid-template-rows: 257px 257px;
@@ -47,6 +68,22 @@
         grid-template-areas:
             "a e c"
             "b e d";
+
+        @media (max-width: 1238px) {
+            width: 986px;
+            grid-template-columns: 318px 1fr 318px;
+        }
+
+        @include tablet {
+            width: 100%;
+            grid-template-rows: 257px 257px 257px 257px;
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "a"
+                "c"
+                "b"
+                "d";
+        }
     }
 
     &__feature {
@@ -59,6 +96,24 @@
             position: absolute;
             width: 215px;
             border-top: 2px dashed var(--color-purple-gray-800);
+        }
+
+        @include tablet {
+            width: 520px;
+            margin-inline: auto;
+
+            &::after {
+                width: 25%;
+            }
+        }
+
+        @include mobile {
+            width: 100%;
+            padding-inline: 40px;
+
+            &::after {
+                width: 55px;
+            }
         }
     }
 
@@ -74,6 +129,21 @@
             right: -196px;
             transform: rotate(37deg);
         }
+
+        @include tablet {
+            &::after {
+                top: 95px;
+                right: -109px;
+                transform: rotate(50deg);
+            }
+        }
+
+        @include mobile {
+            &::after {
+                top: 66px;
+                right: -6px;
+            }
+        }
     }
 
     &__feature--b {
@@ -83,6 +153,21 @@
             top: -19px;
             right: -196px;
             transform: rotate(-37deg);
+        }
+
+        @include tablet {
+            &::after {
+                top: 95px;
+                right: -109px;
+                transform: rotate(50deg);
+            }
+        }
+
+        @include mobile {
+            &::after {
+                top: 66px;
+                right: -6px;
+            }
         }
     }
 
@@ -94,6 +179,21 @@
             left: -196px;
             transform: rotate(-37deg);
         }
+
+        @include tablet {
+            &::after {
+                top: 95px;
+                left: -109px;
+                transform: rotate(-50deg);
+            }
+        }
+
+        @include mobile {
+            &::after {
+                top: 66px;
+                left: -6px;
+            }
+        }
     }
 
     &__feature--d {
@@ -103,6 +203,21 @@
             top: -19px;
             left: -196px;
             transform: rotate(37deg);
+        }
+
+        @include tablet {
+            &::after {
+                top: 95px;
+                left: -109px;
+                transform: rotate(-50deg);
+            }
+        }
+
+        @include mobile {
+            &::after {
+                top: 66px;
+                left: -6px;
+            }
         }
     }
 
@@ -123,6 +238,10 @@
         padding: 11px 20px;
         border-top: 2px dashed var(--color-purple-gray-800);
         margin-top: 45px;
+
+        @media (max-width: 1238px) {
+            padding-inline: 10px;
+        }
     }
 
     &__feature-title {
@@ -144,5 +263,10 @@
         position: absolute;
         left: calc(50% - $half-image-width);
         top: 95px;
+        z-index: 9;
+
+        @include tablet {
+            display: none;
+        }
     }
 }
