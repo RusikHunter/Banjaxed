@@ -1,0 +1,106 @@
+@use "../index" as *;
+
+.content-links {
+    &__link-wrap {
+        display: flex;
+        column-gap: 24px;
+        align-items: center;
+    }
+
+    &__separation {
+        width: 1px;
+        height: 20px;
+        background-color: var(--color-purple-gray-800);
+    }
+
+    &__link--purple {
+        display: inline-flex;
+        @include fluid-text(16, 12);
+        @include font(var(--font-family), 600, 1);
+        color: var(--color-white);
+        background-color: var(--color-purple-500);
+        transition: transform var(--transition), box-shadow var(--transition);
+        width: 208px;
+        justify-content: center;
+        padding-block: 21px;
+        border-radius: 12px;
+
+        @include mobile {
+            width: 144px;
+            padding-block: 17px;
+            border-radius: 9px;
+        }
+
+        @include desktop-screen {
+
+            &:hover,
+            &:active,
+            &:visited {
+                color: var(--color-white);
+            }
+
+            &:hover,
+            &:focus-visible {
+                transform: scale(1.03);
+                box-shadow: 0 12px 30px 0 rgba(14, 68, 152, 0.15);
+            }
+        }
+
+        @include touch-screen {
+
+            &:hover,
+            &:visited,
+            &:focus,
+            &:focus-visible {
+                color: var(--color-white);
+                transform: none;
+            }
+        }
+    }
+
+    &__link--youtube {
+        color: var(--color-red);
+        align-items: center;
+        column-gap: 15px;
+
+        svg {
+            transition: transform var(--transition);
+        }
+
+        span {
+            @include fluid-text(14, 13.5);
+            @include font(var(--font-family), 600, 1);
+            color: var(--color-purple-gray-100);
+
+            @include mobile-small {
+                display: none;
+            }
+        }
+
+        @include desktop-screen {
+
+            &:hover,
+            &:active,
+            &:visited,
+            &:focus-visible {
+                svg {
+                    transform: scale(1.1);
+                    color: var(--color-red);
+                }
+            }
+        }
+
+        @include touch-screen {
+
+            &:hover,
+            &:active,
+            &:visited,
+            &:focus-visible {
+                svg {
+                    transform: none;
+                    color: var(--color-red);
+                }
+            }
+        }
+    }
+}

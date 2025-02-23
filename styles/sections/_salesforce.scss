@@ -73,18 +73,6 @@
         color: var(--color-purple-gray-400);
     }
 
-    &__link-wrap {
-        display: flex;
-        column-gap: 24px;
-        align-items: center;
-    }
-
-    &__separation {
-        width: 1px;
-        height: 20px;
-        background-color: var(--color-purple-gray-800);
-    }
-
     // This section uses local media queries
     // and SCSS variables to adapt the decorative image
 
