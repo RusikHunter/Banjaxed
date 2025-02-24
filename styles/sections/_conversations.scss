@@ -12,10 +12,6 @@
         }
     }
 
-    &__row {}
-
-    &__row--main {}
-
     &__block {
         border: var(--border-default);
         border-radius: 40px;
@@ -45,7 +41,8 @@
         @include mobile {
             background-size: auto 40%;
             background-position: right top;
-            padding: 24px 24px 32px 24px;
+            padding-block: 24px 32px;
+            padding-inline: 24px;
         }
     }
 
@@ -74,8 +71,6 @@
             row-gap: 75px;
         }
     }
-
-    &__info {}
 
     &__title {
         @include fluid-text(40, 20);
@@ -151,10 +146,6 @@
 
     &__link-wrap {
         margin-top: 57px;
-
-        @include tablet {
-            column-gap: 24px !important;
-        }
     }
 
     &__images {
@@ -206,7 +197,7 @@
 
             @include mobile {
                 width: 80%;
-                margin-top: 37px;
+                margin-top: 35px;
             }
         }
 
@@ -227,10 +218,8 @@
         }
     }
 
-    &__column {}
-
     &__column--average {
-        width: calc(calc(546 / 1500) * 100%);
+        width: calc(546 / 1500 * 100%);
 
         @include tablet {
             width: 40%;
@@ -238,7 +227,7 @@
     }
 
     &__column--exceptional {
-        width: calc(calc(930 / 1500) * 100%);
+        width: calc(930 / 1500 * 100%);
 
         @include tablet {
             width: 60%;
@@ -290,7 +279,7 @@
         border: 1px solid var(--color-purple-gray-550);
         border-radius: 50%;
         color: var(--color-purple-gray-550);
-        transition: color var(--transition), border-color var(--transition);
+        transition: all var(--transition);
 
         @include desktop-screen {
 

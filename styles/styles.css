@@ -1227,7 +1227,8 @@ svg * {
   .conversations__block--main {
     background-size: auto 40%;
     background-position: right top;
-    padding: 24px 24px 32px 24px;
+    padding-block: 24px 32px;
+    padding-inline: 24px;
   }
 }
 .conversations__logo {
@@ -1326,11 +1327,6 @@ svg * {
 .conversations__link-wrap {
   margin-top: 57px;
 }
-@media (max-width: 1024px) {
-  .conversations__link-wrap {
-    column-gap: 24px !important;
-  }
-}
 .conversations__images {
   position: relative;
   flex-grow: 1;
@@ -1385,7 +1381,7 @@ svg * {
 @media (max-width: 768px) {
   .conversations__image:last-child {
     width: 80%;
-    margin-top: 37px;
+    margin-top: 35px;
   }
 }
 @media (max-width: 768px) {
@@ -1467,7 +1463,7 @@ svg * {
   border: 1px solid var(--color-purple-gray-550);
   border-radius: 50%;
   color: var(--color-purple-gray-550);
-  transition: color var(--transition), border-color var(--transition);
+  transition: all var(--transition);
 }
 @media (hover: hover) {
   .average__get-link:hover, .average__get-link:active, .average__get-link:focus-visible, .average__get-link:focus:not(:focus-visible):hover {
