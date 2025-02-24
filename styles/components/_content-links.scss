@@ -1,6 +1,10 @@
 @use "../index" as *;
 
 .content-links {
+    display: flex;
+    column-gap: 36px;
+    align-items: center;
+
     &__link-wrap {
         display: flex;
         column-gap: 24px;
@@ -14,22 +18,37 @@
     }
 
     &__link--purple {
-        display: inline-flex;
-        @include fluid-text(16, 12);
-        @include font(var(--font-family), 600, 1);
-        color: var(--color-white);
-        background-color: var(--color-purple-500);
-        transition: transform var(--transition), box-shadow var(--transition);
         width: 208px;
-        justify-content: center;
-        padding-block: 21px;
-        border-radius: 12px;
+        background-color: var(--color-purple-500);
 
         @include mobile {
             width: 144px;
             padding-block: 17px;
             border-radius: 9px;
         }
+    }
+
+    &__link--blue {
+        width: 156px;
+        background-color: var(--color-blue);
+
+        @include mobile {
+            width: 144px;
+            padding-block: 17px;
+            border-radius: 9px;
+        }
+    }
+
+    &__link--purple,
+    &__link--blue {
+        display: inline-flex;
+        @include fluid-text(16, 12);
+        @include font(var(--font-family), 600, 1);
+        color: var(--color-white);
+        transition: transform var(--transition), box-shadow var(--transition);
+        justify-content: center;
+        padding-block: 21px;
+        border-radius: 12px;
 
         @include desktop-screen {
 
