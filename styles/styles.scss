@@ -11,8 +11,9 @@
 @use 'sections/header';
 @use 'sections/salesforce';
 @use 'sections/services';
+@use 'sections/conversations';
 
 @use 'components/navigation';
 @use 'components/burger-button';
 @use 'components/burger-menu';
-@use 'components/link';
+@use 'components/content-links';
