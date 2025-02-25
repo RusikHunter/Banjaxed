@@ -40,7 +40,11 @@
         }
     }
 
-    &__text-wrap {}
+    &__text-wrap {
+        @media (max-width: $breakpoint-content-change-direction-610) {
+            height: 255px;
+        }
+    }
 
     &__text {
         @include fluid-text(32, 18);

@@ -1220,6 +1220,11 @@ svg * {
     padding-block: 24px 48px;
   }
 }
+@media (max-width: 610px) {
+  .industries__text-wrap {
+    height: 255px;
+  }
+}
 .industries__text {
   font-size: clamp(1.125rem, 0.9126213592rem + 0.9061488673vw, 2rem);
   font-family: var(--third-family);
