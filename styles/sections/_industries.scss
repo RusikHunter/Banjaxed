@@ -3,10 +3,6 @@
 .industries {
     $breakpoint-content-change-direction-610: 610px;
 
-    &__inner {}
-
-    &__row {}
-
     &__content {
         display: flex;
         column-gap: 108px;
@@ -82,15 +78,14 @@
     }
 
     &__list {
-        display: flex;
-        flex-direction: column;
-        row-gap: 8px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(188px, 1fr));
+        gap: 8px;
 
         @media (max-width: $breakpoint-content-change-direction-610) {
-            flex-direction: row;
-            column-gap: 8px;
-            margin-top: 24px;
-            width: calc(188px * 3 + 8px * 2);
+            grid-auto-flow: column;
+            grid-template-columns: unset;
+            white-space: nowrap;
         }
     }
 

@@ -8,7 +8,7 @@ class TabClickHandler {
         contentButton: 'data-js-industries-content-button'
     }
 
-    textContentToInsert = {
+    textContent = {
         health: `Whatever your industry, we are here to serve you. Nonprofit and for-profit
         businesses alike can benefit from having a customized Salesforce experience.
         <span class="industries__text--bold">Health</span>,
@@ -25,9 +25,9 @@ class TabClickHandler {
     }
 
     setText = (currentText) => {
-        const textElementToInsert = document.createElement('p');
-        textElementToInsert.classList.add('industries__text');
-        textElementToInsert.insertAdjacentHTML('beforeend', this.textContentToInsert[currentText]);
+        const textElementToInsert = document.createElement('p')
+        textElementToInsert.classList.add('industries__text')
+        textElementToInsert.insertAdjacentHTML('beforeend', this.textContent[currentText])
 
         this.textWrapElement.replaceChildren(textElementToInsert)
     }

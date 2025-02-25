@@ -1262,16 +1262,15 @@ svg * {
   }
 }
 .industries__list {
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(188px, 1fr));
+  gap: 8px;
 }
 @media (max-width: 610px) {
   .industries__list {
-    flex-direction: row;
-    column-gap: 8px;
-    margin-top: 24px;
-    width: 580px;
+    grid-auto-flow: column;
+    grid-template-columns: unset;
+    white-space: nowrap;
   }
 }
 .industries__list-item input {
