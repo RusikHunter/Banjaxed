@@ -12,6 +12,18 @@
         flex-direction: column;
         padding-top: 110px;
         row-gap: 15px;
+
+        @include tablet {
+            padding-top: 80px;
+        }
+
+        @include mobile {
+            padding-top: 48px;
+        }
+
+        @include mobile-small {
+            padding-top: 32px;
+        }
     }
 
     &__subtitle {
@@ -28,11 +40,23 @@
         margin-inline: auto;
         text-align: center;
         max-width: 530px;
+
+        @include laptop {
+            max-width: 430px;
+        }
+
+        @include tablet {
+            max-width: 330px;
+        }
     }
 
     &__row--content {
         flex-direction: column;
         padding-top: 70px;
+
+        @include mobile-small {
+            padding-top: 40px;
+        }
     }
 
     &__content {
@@ -44,6 +68,39 @@
             "automations-image scroll automations"
             "navigating scroll navigating-image";
         row-gap: 140px;
+
+        @include laptop {
+            row-gap: 100px;
+        }
+
+        @include tablet {
+            grid-template-columns: 1fr 80px 1fr;
+            row-gap: 70px;
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "innovative innovative-image"
+                "automations-image automations"
+                "navigating navigating-image";
+            column-gap: 32px;
+            width: 100%;
+            row-gap: 48px;
+        }
+
+        @include mobile-small {
+            grid-template-rows: repeat(6, auto);
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "innovative-image"
+                "innovative"
+                "automations-image"
+                "automations"
+                "navigating-image"
+                "navigating";
+            row-gap: 24px;
+        }
     }
 
     &__grid--innovative {
@@ -61,6 +118,18 @@
 
     &__grid--automations-image {
         grid-area: automations-image;
+
+        @include tablet {
+            align-self: center !important;
+        }
+
+        @include mobile {
+            align-self: start !important;
+        }
+
+        @include mobile-small {
+            margin-top: 16px;
+        }
     }
 
     &__grid--navigating {
@@ -70,22 +139,55 @@
     &__grid--navigating-image {
         grid-area: navigating-image;
         margin-left: auto;
+
+        @include mobile-small {
+            margin-top: 16px;
+        }
     }
 
     &__grid--scroll {
         grid-area: scroll;
+        margin-block: 125%;
+
+        @include tablet {
+            margin-block: 150%;
+        }
+
+        @include mobile {
+            display: none;
+        }
     }
 
     &__info-block {
         display: flex;
         padding-top: 140px;
         column-gap: 16px;
+
+        @include laptop {
+            padding-top: 100px;
+        }
+
+        @include tablet {
+            padding-top: 80px;
+        }
+
+        @include mobile {
+            padding-top: 0;
+        }
     }
 
     &__info-image {
         align-self: start;
         height: auto;
         max-height: 100%;
+
+        @include tablet {
+            width: 20%;
+        }
+
+        @include mobile-small {
+            display: none;
+        }
     }
 
     &__info-text {
@@ -106,6 +208,15 @@
         @include font(var(--font-family), 400, 1.5);
         color: var(--color-purple-gray-550);
         max-width: 360px;
+
+        @include tablet {
+            max-height: 140px;
+            overflow: hidden;
+        }
+
+        @include mobile {
+            max-height: 100%;
+        }
     }
 
     &__image-block {
@@ -113,19 +224,27 @@
         padding: 25px;
         border-radius: 11px;
         border: var(--border-default);
+        align-self: start;
+
+        @include mobile {
+            width: 100%;
+        }
     }
 
     &__image {}
 
     &__scroll {
         width: 10px;
-        height: 75%;
+        height: auto;
         border: var(--border-default);
         margin-inline: auto;
-        margin-top: 200px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        @include mobile {
+            display: none;
+        }
     }
 
     &__scroll-indicator {
@@ -181,5 +300,13 @@
     &__link {
         margin-inline: auto;
         margin-top: 130px;
+
+        @include tablet {
+            margin-top: 70px;
+        }
+
+        @include mobile-small {
+            margin-top: 32px;
+        }
     }
 }
