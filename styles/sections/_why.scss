@@ -1,0 +1,304 @@
+@use "../index" as *;
+
+.why {
+
+    &__row--title {
+        flex-direction: column;
+        padding-top: 110px;
+        row-gap: 15px;
+
+        @include tablet {
+            padding-top: 80px;
+        }
+
+        @include mobile {
+            padding-top: 48px;
+        }
+
+        @include mobile-small {
+            padding-top: 32px;
+        }
+    }
+
+    &__subtitle {
+        @include fluid-text(16, 10);
+        @include font(var(--font-family), 600, 1);
+        color: var(--color-purple-500);
+        text-align: center;
+    }
+
+    &__title {
+        @include fluid-text(36, 20);
+        @include font(var(--third-family), 700, 1.2);
+        color: var(--color-purple-gray-100);
+        margin-inline: auto;
+        text-align: center;
+        max-width: 530px;
+
+        @include laptop {
+            max-width: 430px;
+        }
+
+        @include tablet {
+            max-width: 330px;
+        }
+    }
+
+    &__row--content {
+        flex-direction: column;
+        padding-top: 70px;
+
+        @include mobile-small {
+            padding-top: 40px;
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr 150px 1fr;
+        grid-template-areas:
+            "innovative scroll innovative-image"
+            "automations-image scroll automations"
+            "navigating scroll navigating-image";
+        row-gap: 140px;
+
+        @include laptop {
+            row-gap: 100px;
+        }
+
+        @include tablet {
+            grid-template-columns: 1fr 80px 1fr;
+            row-gap: 70px;
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "innovative innovative-image"
+                "automations-image automations"
+                "navigating navigating-image";
+            column-gap: 32px;
+            width: 100%;
+            row-gap: 48px;
+        }
+
+        @include mobile-small {
+            grid-template-rows: repeat(6, auto);
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "innovative-image"
+                "innovative"
+                "automations-image"
+                "automations"
+                "navigating-image"
+                "navigating";
+            row-gap: 24px;
+        }
+    }
+
+    &__grid--innovative {
+        grid-area: innovative;
+    }
+
+    &__grid--innovative-image {
+        grid-area: innovative-image;
+        margin-left: auto;
+    }
+
+    &__grid--automations {
+        grid-area: automations;
+    }
+
+    &__grid--automations-image {
+        grid-area: automations-image;
+
+        @include tablet {
+            align-self: center !important;
+        }
+
+        @include mobile {
+            align-self: start !important;
+        }
+
+        @include mobile-small {
+            margin-top: 16px;
+        }
+    }
+
+    &__grid--navigating {
+        grid-area: navigating;
+    }
+
+    &__grid--navigating-image {
+        grid-area: navigating-image;
+        margin-left: auto;
+
+        @include mobile-small {
+            margin-top: 16px;
+        }
+    }
+
+    &__grid--scroll {
+        grid-area: scroll;
+        margin-block: 125%;
+
+        @include tablet {
+            margin-block: 150%;
+        }
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__info-block {
+        display: flex;
+        padding-top: 140px;
+        column-gap: 16px;
+
+        @include laptop {
+            padding-top: 100px;
+        }
+
+        @include tablet {
+            padding-top: 80px;
+        }
+
+        @include mobile {
+            padding-top: 0;
+        }
+    }
+
+    &__info-image {
+        align-self: start;
+        height: auto;
+        max-height: 100%;
+
+        @include tablet {
+            width: 20%;
+        }
+
+        @include mobile-small {
+            display: none;
+        }
+    }
+
+    &__info-text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+    }
+
+    &__info-title {
+        @include fluid-text(24, 16);
+        @include font(var(--font-family), 600, 1);
+        color: var(--color-black);
+
+    }
+
+    &__info-description {
+        @include fluid-text(16, 12);
+        @include font(var(--font-family), 400, 1.5);
+        color: var(--color-purple-gray-550);
+        max-width: 360px;
+
+        @include tablet {
+            max-height: 140px;
+            overflow: hidden;
+        }
+
+        @include mobile {
+            max-height: 100%;
+        }
+    }
+
+    &__image-block {
+        width: fit-content;
+        padding: 25px;
+        border-radius: 11px;
+        border: var(--border-default);
+        align-self: start;
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &__scroll {
+        width: 10px;
+        height: auto;
+        border: var(--border-default);
+        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__scroll-indicator {
+        position: relative;
+        box-sizing: content-box;
+        position: relative;
+        left: -21px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 17px solid var(--color-white);
+        background-color: var(--color-white);
+        outline: var(--border-default);
+        transition: background-color 0.6s ease;
+        z-index: 9;
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 5px;
+            width: 7px;
+            height: 20px;
+            background-color: var(--color-white);
+        }
+
+        &::before {
+            top: -20px;
+        }
+
+        &:first-child {
+            top: -10px;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &:last-child {
+            top: 10px;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    &__scroll-indicator--active {
+        background-color: var(--color-purple-600);
+    }
+
+    &__link {
+        margin-inline: auto;
+        margin-top: 130px;
+
+        @include tablet {
+            margin-top: 70px;
+        }
+
+        @include mobile-small {
+            margin-top: 32px;
+        }
+    }
+}
