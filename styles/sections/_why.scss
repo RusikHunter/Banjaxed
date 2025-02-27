@@ -2,12 +2,6 @@
 
 .why {
 
-    &__inner {
-        padding-bottom: 500px;
-    }
-
-    &__row {}
-
     &__row--title {
         flex-direction: column;
         padding-top: 110px;
@@ -231,8 +225,6 @@
         }
     }
 
-    &__image {}
-
     &__scroll {
         width: 10px;
         height: auto;
@@ -254,7 +246,6 @@
         left: -21px;
         width: 16px;
         height: 16px;
-        // padding: 17px;
         border-radius: 50%;
         border: 17px solid var(--color-white);
         background-color: var(--color-white);

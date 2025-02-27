@@ -1710,9 +1710,6 @@ svg * {
   }
 }
 
-.why__inner {
-  padding-bottom: 500px;
-}
 .why__row--title {
   flex-direction: column;
   padding-top: 110px;

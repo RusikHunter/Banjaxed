@@ -1,6 +1,6 @@
 class ScrollDecorationHandler {
-    INDICATOR_CHANGE_HEIGHT_MULTIPLIER_UPPER = 0.6
-    INDICATOR_CHANGE_HEIGHT_MULTIPLIER_LOWER = 0.4
+    INDICATOR_CHANGE_HEIGHT_MULTIPLIER_UPPER = 0.7
+    INDICATOR_CHANGE_HEIGHT_MULTIPLIER_LOWER = 0.3
 
     selectors = {
         scrollIndicator: "[data-js-scroll-indicator]"
@@ -16,23 +16,27 @@ class ScrollDecorationHandler {
     }
 
     checkPosition = () => {
+        let activeIndicator = null
+
         this.scrollIndicatorElements.forEach(scrollIndicatorElement => {
             const rect = scrollIndicatorElement.getBoundingClientRect()
 
-            if (rect.top <= window.innerHeight * this.INDICATOR_CHANGE_HEIGHT_MULTIPLIER_UPPER
-                && rect.top >= window.innerHeight * this.INDICATOR_CHANGE_HEIGHT_MULTIPLIER_LOWER) {
-                console.log('a')
-                this.scrollIndicatorElements.forEach(scrollIndicatorElement => {
-                    scrollIndicatorElement.classList.remove(this.stateClasses.isActive)
-                })
+            const isWithinBounds = rect.top <= window.innerHeight * this.INDICATOR_CHANGE_HEIGHT_MULTIPLIER_UPPER &&
+                rect.top >= window.innerHeight * this.INDICATOR_CHANGE_HEIGHT_MULTIPLIER_LOWER
 
-                scrollIndicatorElement.classList.add(this.stateClasses.isActive)
+            if (isWithinBounds) {
+                activeIndicator = scrollIndicatorElement
             }
         })
+
+        if (activeIndicator) {
+            this.scrollIndicatorElements.forEach(element => element.classList.remove(this.stateClasses.isActive))
+            activeIndicator.classList.add(this.stateClasses.isActive)
+        }
     }
 
     bindEvents() {
-        window.addEventListener("scroll", this.checkPosition)
+        window.addEventListener("scroll", this.checkPosition, { passive: true })
     }
 }
 
