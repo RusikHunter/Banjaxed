@@ -1,7 +1,5 @@
 @use "../index" as *;
 
-
-
 .review {
 
     &__inner {
@@ -39,8 +37,6 @@
             row-gap: 16px;
         }
     }
-
-    &__column {}
 
     &__column--quote {
         row-gap: 60px;
@@ -118,6 +114,9 @@
         border-radius: 32px;
         box-shadow: -10px 30px 50px 0 rgba(137, 169, 218, 0.09); // animation -->
         margin-inline: auto;
+        transform-origin: center;
+        opacity: 0;
+        animation: review-flip-in 0.3s forwards;
         z-index: 9;
 
         @include laptop {

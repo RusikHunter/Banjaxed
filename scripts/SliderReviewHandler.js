@@ -2,6 +2,7 @@ import reviews from "./reviews.json" assert { type: "json" }
 
 class SliderReviewHandler {
     MAX_RATING = 5
+    REVIEW_IN_OUT_ANIMATION_DURATION = 300
 
     selectors = {
         buttonNext: "[data-js-slider-review-button-next]",
@@ -96,17 +97,23 @@ class SliderReviewHandler {
     }
 
     showSlide = () => {
-        this.slideElement.remove()
+        this.slideElement.style.animationName = "review-flip-out"
 
-        this.buttonRadioElements.forEach(buttonRadio => {
-            buttonRadio.classList.remove(this.stateClasses.isActive)
+        this.slideElement.addEventListener("animationend", () => {
+            this.slideElement.remove()
+
+            this.buttonRadioElements.forEach(buttonRadio => {
+                buttonRadio.classList.remove(this.stateClasses.isActive)
+            })
+            this.buttonRadioElements[this.currentSlide].classList.add(this.stateClasses.isActive)
+
+            const newSlide = this.createSlide()
+            this.slideElement = newSlide
+
+            this.slideWrapElement.appendChild(newSlide)
+
+            this.slideElement.style.animationName = "review-flip-in"
         })
-        this.buttonRadioElements[this.currentSlide].classList.add(this.stateClasses.isActive)
-
-        const newSlide = this.createSlide()
-        this.slideElement = newSlide
-
-        this.slideWrapElement.appendChild(newSlide)
     }
 
     showNextSlide = () => {

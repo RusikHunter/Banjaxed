@@ -490,6 +490,26 @@ svg * {
     left: 0;
   }
 }
+@keyframes review-flip-in {
+  0% {
+    transform: scaleX(0) rotateY(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleX(1) rotateY(0deg);
+    opacity: 1;
+  }
+}
+@keyframes review-flip-out {
+  0% {
+    transform: scaleX(1) rotateY(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(0) rotateY(90deg);
+    opacity: 0;
+  }
+}
 @media (max-width: 1335px) {
   @keyframes salesforce-svg-element-loading {
     from {
@@ -2125,6 +2145,9 @@ svg * {
   border-radius: 32px;
   box-shadow: -10px 30px 50px 0 rgba(137, 169, 218, 0.09);
   margin-inline: auto;
+  transform-origin: center;
+  opacity: 0;
+  animation: review-flip-in 0.3s forwards;
   z-index: 9;
 }
 @media (max-width: 1540px) {
