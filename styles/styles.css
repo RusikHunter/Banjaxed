@@ -2026,9 +2026,6 @@ svg * {
   }
 }
 
-.review__inner {
-  padding-bottom: 500px;
-}
 @media (max-width: 768px) {
   .review__inner {
     padding-top: 50px;
@@ -2041,6 +2038,7 @@ svg * {
 }
 .review__row {
   padding-top: 132px;
+  padding-bottom: 25px;
 }
 @media (max-width: 1540px) {
   .review__row {
@@ -2293,6 +2291,109 @@ svg * {
 }
 .review__label--active {
   background-color: var(--color-purple-500) !important;
+}
+
+.leadership__inner {
+  border-top: var(--border-default);
+}
+.leadership__row--text {
+  padding-top: 125px;
+}
+@media (max-width: 1024px) {
+  .leadership__row--text {
+    padding-top: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .leadership__row--text {
+    padding-top: 65px;
+  }
+}
+@media (max-width: 480px) {
+  .leadership__row--text {
+    padding-top: 50px;
+  }
+}
+.leadership__title {
+  font-size: clamp(1.5rem, 1.1359223301rem + 1.5533980583vw, 3rem);
+  font-family: var(--third-family);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-purple-200);
+}
+.leadership__row--content {
+  padding-top: 30px;
+}
+.leadership__content-block {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "a b c d e";
+  gap: 25px;
+}
+@media (max-width: 1024px) {
+  .leadership__content-block {
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "a b c d" "e f f f";
+  }
+}
+@media (max-width: 768px) {
+  .leadership__content-block {
+    width: 100%;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "a b" "c d" "e f";
+  }
+}
+@media (max-width: 480px) {
+  .leadership__content-block {
+    grid-template-areas: "a b" "c d" "e e";
+  }
+}
+.leadership__content-wrap {
+  border-radius: 20px;
+  width: 100%;
+}
+.leadership__content-wrap--a {
+  grid-area: a;
+}
+.leadership__content-wrap--b {
+  grid-area: b;
+}
+.leadership__content-wrap--c {
+  grid-area: c;
+}
+.leadership__content-wrap--d {
+  grid-area: d;
+}
+.leadership__content-wrap--e {
+  grid-area: e;
+}
+@media (max-width: 480px) {
+  .leadership__content-wrap--e {
+    width: 50%;
+    margin-inline: auto;
+  }
+}
+.leadership__image {
+  width: 100%;
+}
+.leadership__name {
+  font-size: clamp(0.75rem, 0.6286407767rem + 0.5177993528vw, 1.25rem);
+  font-family: var(--font-family);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-purple-gray-100);
+  margin-top: 17px;
+}
+.leadership__job {
+  font-size: clamp(0.5rem, 0.4089805825rem + 0.3883495146vw, 0.875rem);
+  font-family: var(--font-family);
+  font-weight: 500;
+  line-height: 1.43;
+  color: var(--color-purple-gray-600);
+  margin-top: 7px;
 }
 
 .social-networks__navigation--burger {
