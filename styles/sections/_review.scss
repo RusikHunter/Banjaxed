@@ -4,8 +4,6 @@
     $breakpoint-content-change-direction-1250: 1250px;
 
     &__inner {
-        padding-bottom: 500px;
-
         @include mobile {
             padding-top: 50px;
         }
@@ -17,6 +15,7 @@
 
     &__row {
         padding-top: 132px;
+        padding-bottom: 25px;
 
         @include laptop {
             column-gap: 144px;
