@@ -1,12 +1,9 @@
 @use "../index" as *;
 
 .leadership {
-
     &__inner {
         border-top: var(--border-default);
     }
-
-    &__row {}
 
     &__row--text {
         padding-top: 125px;
