@@ -90,6 +90,30 @@
     }
 }
 
+@keyframes review-flip-in {
+    0% {
+        transform: scaleX(0) rotateY(90deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scaleX(1) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes review-flip-out {
+    0% {
+        transform: scaleX(1) rotateY(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scaleX(0) rotateY(90deg);
+        opacity: 0;
+    }
+}
+
 @media (max-width: 1335px) {
     $scale-ratio: 0.6;
 
