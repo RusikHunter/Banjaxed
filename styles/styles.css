@@ -2044,6 +2044,11 @@ svg * {
 }
 @media (max-width: 1540px) {
   .review__row {
+    column-gap: 144px;
+  }
+}
+@media (max-width: 1250px) {
+  .review__row {
     column-gap: 24px;
   }
 }

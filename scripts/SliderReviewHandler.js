@@ -99,13 +99,13 @@ class SliderReviewHandler {
     showSlide = () => {
         this.slideElement.style.animationName = "review-flip-out"
 
+        this.buttonRadioElements.forEach(buttonRadio => {
+            buttonRadio.classList.remove(this.stateClasses.isActive)
+        })
+        this.buttonRadioElements[this.currentSlide].classList.add(this.stateClasses.isActive)
+
         this.slideElement.addEventListener("animationend", () => {
             this.slideElement.remove()
-
-            this.buttonRadioElements.forEach(buttonRadio => {
-                buttonRadio.classList.remove(this.stateClasses.isActive)
-            })
-            this.buttonRadioElements[this.currentSlide].classList.add(this.stateClasses.isActive)
 
             const newSlide = this.createSlide()
             this.slideElement = newSlide

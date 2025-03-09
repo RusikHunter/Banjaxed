@@ -1,6 +1,7 @@
 @use "../index" as *;
 
 .review {
+    $breakpoint-content-change-direction-1250: 1250px;
 
     &__inner {
         padding-bottom: 500px;
@@ -18,6 +19,10 @@
         padding-top: 132px;
 
         @include laptop {
+            column-gap: 144px;
+        }
+
+        @media (max-width: $breakpoint-content-change-direction-1250) {
             column-gap: 24px;
         }
 
@@ -60,7 +65,7 @@
             max-width: 400px;
         }
 
-        @media (max-width: 1250px) {
+        @media (max-width: $breakpoint-content-change-direction-1250) {
             max-width: 350px;
         }
 
@@ -109,10 +114,10 @@
         width: 545px;
         height: 385px;
         padding: 50px;
-        background-color: var((--color-white));
+        background-color: var(--color-white);
         border: var(--border-default);
         border-radius: 32px;
-        box-shadow: -10px 30px 50px 0 rgba(137, 169, 218, 0.09); // animation -->
+        box-shadow: -10px 30px 50px 0 rgba(137, 169, 218, 0.09);
         margin-inline: auto;
         transform-origin: center;
         opacity: 0;
@@ -212,7 +217,7 @@
             right: -35%;
         }
 
-        @media (max-width: 1250px) {
+        @media (max-width: $breakpoint-content-change-direction-1250) {
             width: 180px;
             right: -27%;
         }
