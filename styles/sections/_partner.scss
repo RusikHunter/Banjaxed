@@ -1,0 +1,213 @@
+@use "../index" as *;
+
+.partner {
+    background-image: url("../../images/images/travelers.png");
+    background-repeat: no-repeat;
+    background-size: 880px 580px;
+    background-position: left bottom;
+
+    &__inner {}
+
+    &__row {
+        justify-content: end;
+        padding-block: 120px;
+    }
+
+    &__column {}
+
+    &__form {
+        display: grid;
+        grid-template-rows: auto repeat(4, 60px) auto;
+        grid-template-columns: repeat(2, 288px);
+        grid-template-areas:
+            "a a"
+            "b c"
+            "d e"
+            "f f"
+            "g g"
+            "h h";
+        gap: 12px;
+    }
+
+    &__title {
+        @include fluid-text(36, 20);
+        @include font(var(--third-family), 600, 1);
+        color: var(--color-purple-gray-200);
+        margin-bottom: 36px;
+        grid-area: a;
+    }
+
+    &__input {
+        padding: 23px 20px;
+        border: var(--border-default);
+        border-radius: 8px;
+        @include fluid-text(12, 10);
+        @include font(var(--font-family), 500, 1);
+        color: var(--color-purple-gray-550);
+        transition: transform var(--transition);
+        appearance: none;
+        cursor: pointer;
+
+        &::placeholder {
+            @include fluid-text(12, 10);
+            @include font(var(--font-family), 500, 1);
+            color: var(--color-purple-gray-550);
+        }
+
+        &:hover,
+        &:focus-visible {
+            transform: scale(1.03);
+            outline: none;
+        }
+    }
+
+    &__input--first-name {
+        grid-area: b;
+    }
+
+    &__input--last-name {
+        grid-area: c;
+    }
+
+    &__input--email {
+        grid-area: d;
+    }
+
+    &__input-wrap--number {
+        position: relative;
+        display: flex;
+        transition: transform var(--transition);
+        grid-area: e;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            top: calc(50% - 2.5px);
+            left: 38px;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-top: 5px solid var(--color-purple-gray-550);
+            pointer-events: none;
+        }
+
+        &:has(input:focus-visible),
+        &:has(select:focus-visible) {
+            transform: scale(1.03);
+        }
+
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+
+    &__input--country-code {
+        padding-right: 27px;
+        padding-block: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 0;
+
+        & option {
+            @include fluid-text(14, 14);
+            color: var(--color-purple-gray-550);
+            padding: 10px;
+        }
+
+        &:focus-visible {
+            transform: none;
+        }
+
+        &:hover {
+            transform: none;
+        }
+    }
+
+    &__input--phone-number {
+        padding-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 0;
+        flex-grow: 1;
+
+        &:focus {
+            transform: none;
+        }
+
+        &:hover {
+            transform: none;
+        }
+    }
+
+    &__input--business-name {
+        grid-area: f;
+    }
+
+    &__select-wrap--employees-amount {
+        position: relative;
+        grid-area: g;
+        transition: transform var(--transition);
+
+        &:hover,
+        &:focus-visible,
+        &:has(select:focus-visible) {
+            transform: scale(1.03);
+            outline: none;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            top: calc(50% - 2.5px);
+            right: 20px;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-top: 5px solid var(--color-purple-gray-550);
+            pointer-events: none;
+        }
+    }
+
+    &__input--employees-amount {
+        width: 100%;
+        height: 100%;
+        padding-block: 0;
+
+        & option {
+            @include fluid-text(14, 14);
+            color: var(--color-purple-gray-550);
+            padding: 10px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            transform: none;
+            outline: none;
+        }
+    }
+
+    &__submit-wrap {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        margin-top: 42px;
+        grid-area: h;
+    }
+
+    &__input--submit {
+        width: auto !important;
+        align-items: center;
+        padding-inline: 25px;
+        column-gap: 8px;
+    }
+
+    &__info-text {
+        @include fluid-text(14, 10);
+        @include font(var(--font-family), 500, 1);
+        color: var(--color-purple-gray-600);
+    }
+}
