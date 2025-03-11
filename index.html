@@ -841,7 +841,7 @@
                 <div class="partner__inner container">
                     <div class="partner__row row">
                         <div class="partner__column column">
-                            <form class="partner__form">
+                            <form class="partner__form" data-js-form>
                                 <h3 class="partner__title">Partner With Us</h3>
 
                                 <input type="text" name="first_name" class="partner__input partner__input--first-name"
@@ -885,7 +885,8 @@
 
                                 <div class="partner__submit-wrap">
                                     <button type="submit"
-                                        class="partner__input partner__input--submit content-links__link--purple">
+                                        class="partner__input partner__input--submit content-links__link--purple"
+                                        data-js-form-submit>
                                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -899,6 +900,9 @@
                                     <span class="partner__info-text">
                                         *By clicking you agree to the processing of personal data
                                     </span>
+
+                                    <p class="partner__error-text" data-js-error-message>Error sending form. Incorrect
+                                        data.</p>
                                 </div>
                             </form>
                         </div>

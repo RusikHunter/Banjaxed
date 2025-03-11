@@ -2400,11 +2400,12 @@ svg * {
   background-image: url("../../images/images/travelers.png");
   background-repeat: no-repeat;
   background-size: 880px 580px;
-  background-position: left center;
+  background-position: bottom left;
 }
 @media (max-width: 1250px) {
   .partner {
     background-size: 440px 290px;
+    background-position: left center;
   }
 }
 @media (max-width: 768px) {
@@ -2603,6 +2604,7 @@ svg * {
   }
 }
 .partner__submit-wrap {
+  position: relative;
   display: flex;
   align-items: center;
   column-gap: 8px;
@@ -2637,6 +2639,25 @@ svg * {
 }
 @media (max-width: 768px) {
   .partner__info-text {
+    text-align: center;
+  }
+}
+.partner__error-text {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  display: none;
+  font-size: clamp(0.625rem, 0.5643203883rem + 0.2588996764vw, 0.875rem);
+  font-family: var(--font-family);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-red);
+  margin-top: 5px;
+}
+@media (max-width: 768px) {
+  .partner__error-text {
+    top: 100px;
+    width: 100%;
     text-align: center;
   }
 }
