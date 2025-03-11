@@ -2571,7 +2571,6 @@ svg * {
 @media (hover: hover) {
   .partner__select-wrap--employees-amount:hover, .partner__select-wrap--employees-amount:focus-visible, .partner__select-wrap--employees-amount:has(select:focus-visible) {
     transform: scale(1.03);
-    outline: none;
   }
 }
 .partner__select-wrap--employees-amount::after {
@@ -2600,7 +2599,6 @@ svg * {
 @media (hover: hover) {
   .partner__input--employees-amount:hover, .partner__input--employees-amount:focus-visible {
     transform: none;
-    outline: none;
   }
 }
 .partner__submit-wrap {
