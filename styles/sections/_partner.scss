@@ -1,19 +1,39 @@
 @use "../index" as *;
 
 .partner {
+    $breakpoint-content-change-direction-1250: 1250px;
+
     background-image: url("../../images/images/travelers.png");
     background-repeat: no-repeat;
     background-size: 880px 580px;
-    background-position: left bottom;
+    background-position: left center;
+
+    @media (max-width: $breakpoint-content-change-direction-1250) {
+        background-size: calc(880px * 0.5) calc(580px * 0.5);
+    }
+
+    @include mobile {
+        background-image: url("../../images/images/nature.png");
+        background-size: contain;
+        background-position: bottom center;
+    }
 
     &__inner {}
 
     &__row {
         justify-content: end;
         padding-block: 120px;
+
+        @include mobile {
+            padding-block: 60px 160px;
+        }
     }
 
-    &__column {}
+    &__column {
+        @include mobile {
+            width: 100%;
+        }
+    }
 
     &__form {
         display: grid;
@@ -27,6 +47,25 @@
             "g g"
             "h h";
         gap: 12px;
+
+        @include mobile {
+            width: 100%;
+            padding: 34px 24px 45px 24px;
+            background-color: var(--color-white);
+            border: var(--border-default);
+            border-radius: 20px;
+            grid-template-rows: 36px repeat(6, 52px) auto;
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "a"
+                "b"
+                "c"
+                "d"
+                "e"
+                "f"
+                "g"
+                "h";
+        }
     }
 
     &__title {
@@ -35,6 +74,11 @@
         color: var(--color-purple-gray-200);
         margin-bottom: 36px;
         grid-area: a;
+
+        @include mobile {
+            text-align: center;
+            margin-bottom: 0;
+        }
     }
 
     &__input {
@@ -54,10 +98,22 @@
             color: var(--color-purple-gray-550);
         }
 
-        &:hover,
-        &:focus-visible {
-            transform: scale(1.03);
-            outline: none;
+        @include desktop-screen {
+
+            &:hover,
+            &:focus-visible {
+                transform: scale(1.03);
+                outline: none;
+            }
+        }
+
+        @include touch-screen {
+
+            &:hover,
+            &:focus-visible {
+                transform: none;
+                outline: none;
+            }
         }
     }
 
@@ -93,13 +149,16 @@
             pointer-events: none;
         }
 
-        &:has(input:focus-visible),
-        &:has(select:focus-visible) {
-            transform: scale(1.03);
-        }
+        @include desktop-screen {
 
-        &:hover {
-            transform: scale(1.03);
+            &:has(input:focus-visible),
+            &:has(select:focus-visible) {
+                transform: scale(1.03);
+            }
+
+            &:hover {
+                transform: scale(1.03);
+            }
         }
     }
 
@@ -116,12 +175,12 @@
             padding: 10px;
         }
 
-        &:focus-visible {
-            transform: none;
-        }
+        @include desktop-screen {
 
-        &:hover {
-            transform: none;
+            &:hover,
+            &:focus-visible {
+                transform: none;
+            }
         }
     }
 
@@ -132,12 +191,12 @@
         border-left: 0;
         flex-grow: 1;
 
-        &:focus {
-            transform: none;
-        }
+        @include desktop-screen {
 
-        &:hover {
-            transform: none;
+            &:hover,
+            &:focus-visible {
+                transform: none;
+            }
         }
     }
 
@@ -150,11 +209,14 @@
         grid-area: g;
         transition: transform var(--transition);
 
-        &:hover,
-        &:focus-visible,
-        &:has(select:focus-visible) {
-            transform: scale(1.03);
-            outline: none;
+        @include desktop-screen {
+
+            &:hover,
+            &:focus-visible,
+            &:has(select:focus-visible) {
+                transform: scale(1.03);
+                outline: none;
+            }
         }
 
         &::after {
@@ -183,10 +245,13 @@
             padding: 10px;
         }
 
-        &:hover,
-        &:focus-visible {
-            transform: none;
-            outline: none;
+        @include desktop-screen {
+
+            &:hover,
+            &:focus-visible {
+                transform: none;
+                outline: none;
+            }
         }
     }
 
@@ -196,6 +261,12 @@
         column-gap: 8px;
         margin-top: 42px;
         grid-area: h;
+
+        @include mobile {
+            flex-direction: column;
+            margin-top: 0;
+            row-gap: 16px;
+        }
     }
 
     &__input--submit {
@@ -203,11 +274,20 @@
         align-items: center;
         padding-inline: 25px;
         column-gap: 8px;
+
+        @include mobile {
+            padding: 0;
+            width: 100% !important;
+        }
     }
 
     &__info-text {
         @include fluid-text(14, 10);
         @include font(var(--font-family), 500, 1);
         color: var(--color-purple-gray-600);
+
+        @include mobile {
+            text-align: center;
+        }
     }
 }
