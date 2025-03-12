@@ -1,9 +1,9 @@
-import HeaderHandler from "./HeaderHandler.js"
-import TabClickHandler from "./TabClickHandler.js"
-import ConversationsAnimationHandler from "./ConversationsAnimationHandler.js"
-import ScrollDecorationHandler from "./ScrollDecorationHandler.js"
-import SliderReviewHandler from "./SliderReviewHandler.js"
-import FormHandler from "./FormHandler.js"
+import HeaderHandler from './HeaderHandler.js'
+import TabClickHandler from './TabClickHandler.js'
+import ConversationsAnimationHandler from './ConversationsAnimationHandler.js'
+import ScrollDecorationHandler from './ScrollDecorationHandler.js'
+import SliderReviewHandler from './SliderReviewHandler.js'
+import FormHandler from './FormHandler.js'
 
 new HeaderHandler()
 new TabClickHandler()

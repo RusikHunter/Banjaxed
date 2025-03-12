@@ -8,6 +8,11 @@ class HeaderHandler {
         burgerMenu: '[data-js-burger-menu]'
     }
 
+    animations = {
+        burgerMenuOpen: 'burger-menu-open',
+        burgerMenuClose: 'burger-menu-close'
+    }
+
     stateClasses = {
         isActive: 'burger-button--active',
         noAnimation: 'no-animation'
@@ -25,9 +30,9 @@ class HeaderHandler {
 
         if (!this.burgerMenuElement.open) {
             this.burgerMenuElement.show()
-            this.burgerMenuElement.style.animationName = 'burger-menu-open' // ! refactor
+            this.burgerMenuElement.style.animationName = this.animations.burgerMenuOpen
         } else {
-            this.burgerMenuElement.style.animationName = 'burger-menu-close' // ! refactor // ! refactor // ! refactor // ! refactor // ! refactor
+            this.burgerMenuElement.style.animationName = this.animations.burgerMenuClose
 
             // wait until the animation is finished, then close the burger menu
 

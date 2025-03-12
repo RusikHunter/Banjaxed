@@ -34,7 +34,7 @@ class TabClickHandler {
 
     bindEvents() {
         this.contentButtonElements.forEach(buttonElement => {
-            buttonElement.addEventListener("click", () => {
+            buttonElement.addEventListener('click', () => {
                 const text = buttonElement.getAttribute(this.attributes.contentButton)
                 this.setText(text)
             })
