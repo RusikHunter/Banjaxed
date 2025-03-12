@@ -37,8 +37,16 @@
     }
 
     &__text-wrap {
+        height: 270px;
+        overflow: scroll;
+
         @media (max-width: $breakpoint-content-change-direction-610) {
             height: 255px;
+        }
+
+        &::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+            display: none;
         }
     }
 

@@ -3,7 +3,7 @@ class ScrollDecorationHandler {
     INDICATOR_CHANGE_HEIGHT_MULTIPLIER_LOWER = 0.3
 
     selectors = {
-        scrollIndicator: "[data-js-scroll-indicator]"
+        scrollIndicator: '[data-js-scroll-indicator]'
     }
 
     stateClasses = {
@@ -36,7 +36,7 @@ class ScrollDecorationHandler {
     }
 
     bindEvents() {
-        window.addEventListener("scroll", this.checkPosition, { passive: true })
+        window.addEventListener('scroll', this.checkPosition, { passive: true })
     }
 }
 

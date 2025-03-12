@@ -42,3 +42,8 @@
 .overlay {
     @include overlay;
 }
+
+.no-animation *::before,
+.no-animation *::after {
+    visibility: hidden !important;
+}

@@ -80,3 +80,13 @@
     width: #{$size * 1px};
     aspect-ratio: 1;
 }
+
+//
+// mixin that disables animation for elements
+// with animation
+//
+
+@mixin no-animation {
+    animation: none !important;
+    transition: none !important;
+}
