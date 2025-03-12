@@ -2,10 +2,6 @@
 
 .footer {
 
-    &__inner {}
-
-    &__row {}
-
     &__row--main {
         padding-top: 45px;
 
@@ -53,8 +49,6 @@
             height: 31px;
         }
     }
-
-    &__logo {}
 
     &__column--title {
         margin-left: 7%;
@@ -144,8 +138,6 @@
         }
     }
 
-    &__social-networks {}
-
     &__row--navigation {
         padding-block: 60px 25px;
 
@@ -182,6 +174,4 @@
         @include font(var(--font-family), 500, 1.43);
         color: var(--color-purple-gray-500);
     }
-
-    &__navigation-link {}
 }
