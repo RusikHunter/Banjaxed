@@ -25,9 +25,9 @@ class HeaderHandler {
 
         if (!this.burgerMenuElement.open) {
             this.burgerMenuElement.show()
-            this.burgerMenuElement.style.animationName = 'burger-menu-open'
+            this.burgerMenuElement.style.animationName = 'burger-menu-open' // ! refactor
         } else {
-            this.burgerMenuElement.style.animationName = 'burger-menu-close'
+            this.burgerMenuElement.style.animationName = 'burger-menu-close' // ! refactor // ! refactor // ! refactor // ! refactor // ! refactor
 
             // wait until the animation is finished, then close the burger menu
 

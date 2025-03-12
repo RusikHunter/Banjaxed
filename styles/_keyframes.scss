@@ -90,6 +90,26 @@
     }
 }
 
+@keyframes average-show {
+    from {
+        left: -150px;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+@keyframes exceptional-show {
+    from {
+        right: -150px;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
 @keyframes review-flip-in {
     0% {
         transform: scaleX(0) rotateY(90deg);

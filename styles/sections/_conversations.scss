@@ -219,7 +219,9 @@
     }
 
     &__column--average {
+        position: relative;
         width: calc(546 / 1500 * 100%);
+        left: -150px;
 
         @include tablet {
             width: 40%;
@@ -228,6 +230,7 @@
 
     &__column--exceptional {
         width: calc(930 / 1500 * 100%);
+        right: -150px;
 
         @include tablet {
             width: 60%;
@@ -236,7 +239,10 @@
 
     &__column--average,
     &__column--exceptional {
+        position: relative;
         height: 318px;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
 
         @include tablet {
             height: 300px;

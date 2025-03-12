@@ -495,6 +495,22 @@ svg * {
     left: 0;
   }
 }
+@keyframes average-show {
+  from {
+    left: -150px;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes exceptional-show {
+  from {
+    right: -150px;
+  }
+  to {
+    right: 0;
+  }
+}
 @keyframes review-flip-in {
   0% {
     transform: scaleX(0) rotateY(90deg);
@@ -1559,7 +1575,9 @@ svg * {
   }
 }
 .conversations__column--average {
+  position: relative;
   width: 36.4%;
+  left: -150px;
 }
 @media (max-width: 1024px) {
   .conversations__column--average {
@@ -1568,6 +1586,7 @@ svg * {
 }
 .conversations__column--exceptional {
   width: 62%;
+  right: -150px;
 }
 @media (max-width: 1024px) {
   .conversations__column--exceptional {
@@ -1575,7 +1594,10 @@ svg * {
   }
 }
 .conversations__column--average, .conversations__column--exceptional {
+  position: relative;
   height: 318px;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
 @media (max-width: 1024px) {
   .conversations__column--average, .conversations__column--exceptional {
