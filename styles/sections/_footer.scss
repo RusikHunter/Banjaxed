@@ -1,0 +1,86 @@
+@use "../index" as *;
+
+.footer {
+
+    &__inner {}
+
+    &__row {}
+
+    &__row--main {
+        padding-top: 45px;
+    }
+
+    &__column {
+        width: auto;
+    }
+
+    &__column--logo {}
+
+    &__logo-link {
+        display: block;
+        margin-top: 15px;
+    }
+
+    &__logo {}
+
+    &__column--title {
+        margin-left: 7%;
+    }
+
+    &__title {
+        @include fluid-text(32, 20);
+        @include font(var(--font-family), 300, 1);
+        color: var(--color-purple-gray-300);
+        max-width: 560px;
+    }
+
+    &__column--contacts {
+        margin-left: 10%;
+    }
+
+    &__subtitle {
+        @include fluid-text(18, 14);
+        @include font(var(--third-family), 600, 1.33);
+        color: var(--color-purple-gray-200);
+        margin-bottom: 10px;
+    }
+
+    &__contact-link {
+        @include fluid-text(14, 12);
+        @include font(var(--font-family), 500, 1.71);
+        color: var(--color-purple-gray-400);
+        margin-bottom: 3px;
+    }
+
+    &__contact-link--title {
+        color: var(--color-purple-gray-550);
+        margin-right: 10px;
+    }
+
+    &__column--links {}
+
+    &__social-networks {}
+
+    &__row--navigation {
+        padding-block: 60px 25px;
+    }
+
+    &__navigation {
+        width: 480px;
+        margin-left: 17%;
+    }
+
+    &__navigation-list {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__navigation-list-item {
+        @include fluid-text(14, 12);
+        @include font(var(--font-family), 500, 1.43);
+        color: var(--color-purple-gray-500);
+    }
+
+    &__navigation-link {}
+}
