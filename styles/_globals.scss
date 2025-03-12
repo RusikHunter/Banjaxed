@@ -2,6 +2,10 @@
 // Styles for tag selectors
 //
 
+html {
+    overflow-x: hidden;
+}
+
 a {
     color: inherit;
     text-decoration: none;
@@ -25,9 +29,9 @@ button:focus {
 }
 
 body {
-    overflow: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    overflow-x: hidden
 }
 
 body::-webkit-scrollbar {

@@ -68,6 +68,10 @@
   font-style: normal;
   font-display: swap;
 }
+html {
+  overflow-x: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -91,9 +95,9 @@ button:focus {
 }
 
 body {
-  overflow: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -1263,10 +1267,18 @@ svg * {
     padding-block: 24px 48px;
   }
 }
+.industries__text-wrap {
+  height: 270px;
+  overflow: scroll;
+}
 @media (max-width: 610px) {
   .industries__text-wrap {
     height: 255px;
   }
+}
+.industries__text-wrap::-webkit-scrollbar,
+.industries__text-wrap body::-webkit-scrollbar {
+  display: none;
 }
 .industries__text {
   font-size: clamp(1.125rem, 0.9126213592rem + 0.9061488673vw, 2rem);
@@ -2874,6 +2886,7 @@ svg * {
   font-weight: 500;
   line-height: 1.43;
   color: var(--color-purple-gray-500);
+  transition: color var(--transition);
 }
 
 .social-networks__navigation--burger {

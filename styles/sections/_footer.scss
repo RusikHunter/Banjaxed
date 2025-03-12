@@ -173,5 +173,6 @@
         @include fluid-text(14, 12);
         @include font(var(--font-family), 500, 1.43);
         color: var(--color-purple-gray-500);
+        transition: color var(--transition);
     }
 }
