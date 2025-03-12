@@ -369,6 +369,11 @@ svg * {
   z-index: 999 !important;
 }
 
+.no-animation *::before,
+.no-animation *::after {
+  visibility: hidden !important;
+}
+
 :root {
   --color-white: #FFFFFF;
   --color-black: #000000;

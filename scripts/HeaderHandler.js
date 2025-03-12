@@ -3,15 +3,18 @@ class HeaderHandler {
     BURGER_MENU_ANIMATION_DURATION = 400
 
     selectors = {
+        header: '[data-js-header]',
         burgerButton: '[data-js-burger-button]',
         burgerMenu: '[data-js-burger-menu]'
     }
 
     stateClasses = {
-        isActive: 'burger-button--active'
+        isActive: 'burger-button--active',
+        noAnimation: 'no-animation'
     }
 
     constructor() {
+        this.headerElement = document.querySelector(this.selectors.header)
         this.burgerButtonElement = document.querySelector(this.selectors.burgerButton)
         this.burgerMenuElement = document.querySelector(this.selectors.burgerMenu)
         this.bindEvents()
@@ -39,7 +42,7 @@ class HeaderHandler {
     // without animation
 
     onWindowResize = () => {
-        const isMobile = window.innerWidth <= this.MAX_MOBILE_VIEWPORT_WIDTH;
+        const isMobile = window.innerWidth <= this.MAX_MOBILE_VIEWPORT_WIDTH
 
         if (isMobile && this.burgerButtonElement.classList.contains(this.stateClasses.isActive)) {
             this.burgerMenuElement.show()
@@ -47,9 +50,22 @@ class HeaderHandler {
         }
     }
 
+    // method that disables animations from playing on
+    // all header elements for the first few hundred milliseconds
+    // after page load, because decorative elements on
+    // navigation elements play unwanted animations on page load
+    // due to style peculiarities
+
+    disableAnimationOnLoading = () => {
+        setTimeout(() => {
+            this.headerElement.classList.remove(this.stateClasses.noAnimation)
+        }, this.BURGER_MENU_ANIMATION_DURATION)
+    }
+
     bindEvents() {
         this.burgerButtonElement.addEventListener('click', this.onBurgerButtonClick)
-        window.addEventListener('resize', this.onWindowResize);
+        window.addEventListener('resize', this.onWindowResize)
+        this.disableAnimationOnLoading()
     }
 }
 
