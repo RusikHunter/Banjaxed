@@ -1156,7 +1156,7 @@ svg * {
   height: 160px;
   top: -55px;
   left: -35px;
-  background-image: url("../../images/icons/data-management.svg");
+  background-image: url("/images/icons/data-management.svg");
 }
 .services__feature-icon-decoration--admin {
   background-color: #FFB800;
@@ -1166,7 +1166,7 @@ svg * {
   height: 149px;
   top: -45px;
   left: -14px;
-  background-image: url("../../images/icons/admin-services.svg");
+  background-image: url("/images/icons/admin-services.svg");
 }
 .services__feature-icon-decoration--development {
   background-color: #7FC6A6;
@@ -1176,7 +1176,7 @@ svg * {
   height: 134px;
   top: -29px;
   left: -15px;
-  background-image: url("../../images/icons/development-services.svg");
+  background-image: url("/images/icons/development-services.svg");
 }
 .services__feature-icon-decoration--solution {
   background-color: #FF619A;
@@ -1186,7 +1186,7 @@ svg * {
   height: 126px;
   top: -19px;
   left: -15px;
-  background-image: url("../../images/icons/solution-architecture.svg");
+  background-image: url("/images/icons/solution-architecture.svg");
 }
 .services__feature-textbox {
   display: flex;
