@@ -21,10 +21,8 @@ class ConversationsAnimationHandler {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     if (entry.target.hasAttribute(this.attributes.average)) {
-                        console.log('a')
                         entry.target.style.animationName = this.animations.averageShow
                     } else if (entry.target.hasAttribute(this.attributes.exceptional)) {
-                        console.log('b')
                         entry.target.style.animationName = this.animations.exceptionalShow
                     }
                     observer.unobserve(entry.target)
