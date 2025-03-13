@@ -37,7 +37,6 @@ class ConversationsAnimationHandler {
     bindEvents() {
         this.animationObserver.observe(this.averageElement)
         this.animationObserver.observe(this.exceptionalElement)
-        console.log('bind')
     }
 }
 
