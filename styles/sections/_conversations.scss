@@ -243,6 +243,7 @@
         height: 318px;
         animation-duration: 1.5s;
         animation-fill-mode: forwards;
+        opacity: 0;
 
         @include tablet {
             height: 300px;
