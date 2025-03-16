@@ -192,6 +192,15 @@
             max-height: 100%;
             overflow: scroll;
         }
+
+        @include mobile {
+            height: 95px;
+
+            &::-webkit-scrollbar,
+            body::-webkit-scrollbar {
+                display: none;
+            }
+        }
     }
 
     &__button-toggle {

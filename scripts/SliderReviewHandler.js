@@ -1,4 +1,4 @@
-const reviews123 = [
+const reviews = [
     {
         "username": "Brandon S.",
         "userDetails": "Head of Customer Success, Salesforce Administration",
@@ -50,7 +50,7 @@ class SliderReviewHandler {
         this.buttonRadioElements = document.querySelectorAll(this.selectors.buttonRadio)
         this.slideWrapElement = document.querySelector(this.selectors.slideWrap)
         this.slideElement = document.querySelector(this.selectors.slide)
-        this.reviews = reviews123
+        this.reviews = reviews
 
         this.currentSlide = 0
 

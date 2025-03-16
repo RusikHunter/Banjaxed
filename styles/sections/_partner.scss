@@ -246,6 +246,10 @@
             padding: 10px;
         }
 
+        @include mobile-small {
+            padding-right: 40px;
+        }
+
         @include desktop-screen {
 
             &:hover,

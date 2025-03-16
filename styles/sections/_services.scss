@@ -35,6 +35,7 @@
         @include font(var(--third-family), 700, 1);
         color: var(--color-purple-gray-100);
         text-align: center;
+        z-index: 99;
     }
 
     &__description {

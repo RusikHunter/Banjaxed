@@ -1,0 +1,76 @@
+@use "../index" as *;
+
+.exceptional {
+    border: none;
+    background-color: var(--color-purple-500);
+    padding: 53px 0 40px 79px;
+    background-image: url("../../images/images/exceptional-background.svg");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: right center;
+
+    @include tablet {
+        padding-inline: 30px;
+    }
+
+    &__title {
+        @include fluid-text(32, 18);
+        @include font(var(--third-family), 700, 1);
+        color: var(--color-white);
+    }
+
+    &__list {
+        margin-top: 12px;
+        margin-left: 15px;
+    }
+
+    &__list-item {
+        @include fluid-text(16, 12);
+        @include font(var(--font-family), 400, 1.5);
+        color: var(--color-white);
+        list-style-type: disc;
+    }
+
+    &__get-link {
+        display: inline-flex;
+        background-color: var(--color-white);
+        @include fluid-text(16, 14);
+        @include font(var(--font-family), 700, 1);
+        color: var(--color-purple-gray-400);
+        justify-content: center;
+        transition: transform var(--transition);
+        padding-block: 12px;
+        border-radius: 8px;
+        width: 248px;
+        margin-top: 36px;
+
+        @include mobile-small {
+            width: 90%;
+        }
+
+        @include desktop-screen {
+
+            &:hover,
+            &:active,
+            &:visited {
+                color: var(--color-purple-gray-400);
+            }
+
+            &:hover,
+            &:focus-visible {
+                transform: scale(1.03);
+            }
+        }
+
+        @include touch-screen {
+
+            &:hover,
+            &:visited,
+            &:focus,
+            &:focus-visible {
+                color: var(--color-purple-gray-400);
+                transform: none;
+            }
+        }
+    }
+}
