@@ -1,4 +1,29 @@
-import reviews from "./reviews.json" assert { type: 'json' }
+const reviews123 = [
+    {
+        "username": "Brandon S.",
+        "userDetails": "Head of Customer Success, Salesforce Administration",
+        "text": "We've been very impressed by their professionalism, responsiveness and collaboration. When it comes to Salesforce, they know their stuff and have a fantastically consultative approach. A true pleasure to work with!",
+        "rating": 5
+    },
+    {
+        "username": "John D.",
+        "userDetails": "Customer Success Manager, CRM Solutions",
+        "text": "Their expertise, responsiveness, and dedication have truly stood out. Working with them on Salesforce solutions has been seamless—they understand the platform inside out and offer insightful recommendations. An absolute pleasure to collaborate with!",
+        "rating": 4
+    },
+    {
+        "username": "Samanta R.",
+        "userDetails": "Senior Client Engagement Specialist, SaaS Platforms",
+        "text": "Highly professional, knowledgeable, and always ready to help. Their approach to Salesforce is both strategic and hands-on, ensuring everything runs smoothly. We couldn’t have asked for a better partner!",
+        "rating": 3
+    },
+    {
+        "username": "James C.",
+        "userDetails": "Customer Experience Lead, Enterprise Software",
+        "text": "A team that consistently delivers excellence! Their deep understanding of Salesforce, proactive communication, and problem-solving skills make them an invaluable asset. Working with them has been an outstanding experience.",
+        "rating": 5
+    }
+]
 
 class SliderReviewHandler {
     MAX_RATING = 5
@@ -25,7 +50,7 @@ class SliderReviewHandler {
         this.buttonRadioElements = document.querySelectorAll(this.selectors.buttonRadio)
         this.slideWrapElement = document.querySelector(this.selectors.slideWrap)
         this.slideElement = document.querySelector(this.selectors.slide)
-        this.reviews = reviews
+        this.reviews = reviews123
 
         this.currentSlide = 0
 
