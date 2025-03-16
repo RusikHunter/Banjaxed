@@ -132,14 +132,14 @@
 
         @include mobile {
             width: 100%;
-            height: auto;
+            height: 305px;
             padding-bottom: 50px;
         }
 
         @include mobile-small {
             padding: 23px;
-            padding-bottom: 40px;
             height: 281px;
+            padding-bottom: 40px;
         }
     }
 

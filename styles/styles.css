@@ -2087,15 +2087,15 @@ svg * {
 @media (max-width: 768px) {
   .review__slide {
     width: 100%;
-    height: auto;
+    height: 305px;
     padding-bottom: 50px;
   }
 }
 @media (max-width: 480px) {
   .review__slide {
     padding: 23px;
-    padding-bottom: 40px;
     height: 281px;
+    padding-bottom: 40px;
   }
 }
 .review__rating-wrap {
