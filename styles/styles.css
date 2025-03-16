@@ -2581,6 +2581,7 @@ svg * {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-right: 0;
+  background-color: var(--color-white);
 }
 .partner__input--country-code option {
   font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
@@ -2611,6 +2612,8 @@ svg * {
   position: relative;
   grid-area: g;
   transition: transform var(--transition);
+  background-color: var(--color-white);
+  border-radius: 8px;
 }
 @media (hover: hover) {
   .partner__select-wrap--employees-amount:hover, .partner__select-wrap--employees-amount:focus-visible, .partner__select-wrap--employees-amount:has(select:focus-visible) {
