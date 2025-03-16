@@ -2062,6 +2062,8 @@ svg * {
   }
 }
 .review__slide {
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 545px;
   height: 385px;
@@ -2093,6 +2095,7 @@ svg * {
   .review__slide {
     padding: 23px;
     padding-bottom: 40px;
+    height: 281px;
   }
 }
 .review__rating-wrap {
@@ -2150,11 +2153,6 @@ svg * {
   .review__text {
     max-height: 100%;
     overflow: scroll;
-  }
-}
-@media (max-width: 768px) {
-  .review__text {
-    height: 95px;
   }
   .review__text::-webkit-scrollbar,
   .review__text body::-webkit-scrollbar {
@@ -2525,6 +2523,7 @@ svg * {
   width: 100%;
   height: 100%;
   padding-block: 0;
+  background-color: var(--color-white);
 }
 .partner__input--employees-amount option {
   font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);

@@ -109,6 +109,8 @@
     }
 
     &__slide {
+        display: flex;
+        flex-direction: column;
         position: relative;
         width: 545px;
         height: 385px;
@@ -137,6 +139,7 @@
         @include mobile-small {
             padding: 23px;
             padding-bottom: 40px;
+            height: 281px;
         }
     }
 
@@ -191,10 +194,6 @@
         @include laptop {
             max-height: 100%;
             overflow: scroll;
-        }
-
-        @include mobile {
-            height: 95px;
 
             &::-webkit-scrollbar,
             body::-webkit-scrollbar {
