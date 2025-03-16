@@ -37,8 +37,9 @@
     }
 
     &__text-wrap {
-        height: 270px;
+        height: 275px;
         overflow: scroll;
+        margin-bottom: 20px;
 
         @media (max-width: $breakpoint-content-change-direction-610) {
             height: 255px;
