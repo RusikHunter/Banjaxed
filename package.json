@@ -1,19 +1,14 @@
 {
-  "name": "banjaxed",
-  "version": "1.0.0",
-  "description": "Banjaxed - assistance in business development.",
-  "main": "index.js",
+  "name": "banjaxed-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "concurrently \"live-server\" \"sass --watch .\""
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "concurrently": "^9.1.2",
-    "sass": "^1.84.0"
-  },
-  "dependencies": {
-    "live-server": "^1.2.2",
-    "swiper": "^11.2.5"
+    "vite": "^7.0.5"
   }
 }
