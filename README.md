@@ -20,7 +20,7 @@ This project is a one-page website designed for a fictional company that special
 
 ## 🛠️ Tech Stack
 
-- **Markup & Styling:** HTML5, SCSS (Sass syntax)
+- **Markup & Styling:** HTML5, Sass (SCSS syntax)
 
 - **JavaScript:** Vanilla JavaScript (ES6+)
 
