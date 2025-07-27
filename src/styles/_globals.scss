@@ -6,6 +6,16 @@ html {
     overflow-x: hidden;
 }
 
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-x: hidden
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
 a {
     color: inherit;
     text-decoration: none;
@@ -26,14 +36,4 @@ button {
 
 button:focus {
     outline: none;
-}
-
-body {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    overflow-x: hidden
-}
-
-body::-webkit-scrollbar {
-    display: none;
 }
